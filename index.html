@@ -2,61 +2,120 @@
 <html>
 <head>
 <title>Waheguru Builders Ltd</title>
-</head>
+<style>
 
-<body style="margin:0;font-family:Arial;">
+body {
+margin:0;
+font-family:Arial, sans-serif;
+}
 
-<!-- HERO SECTION -->
-<div style="
+/* HERO SECTION */
+.hero {
 height:100vh;
-background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
+background:
+linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
 background-size:cover;
 background-position:center;
-color:white;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+color:white;
 text-align:center;
 padding:20px;
-">
+}
 
-<h1 style="font-size:50px;">Waheguru Builders Ltd</h1>
+/* NAVBAR */
+.nav {
+position:absolute;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:20px;
+color:white;
+}
 
-<p style="max-width:700px;font-size:18px;">
-We are a UK-based construction and development company delivering high-quality building solutions across residential and commercial projects. From new builds and extensions to full property developments, we bring expertise, precision, and reliability to every project.
-</p>
+.nav a {
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
 
-<p style="max-width:700px;font-size:16px;">
-Our experienced team includes skilled builders, architects, and structural engineers, working together to design and deliver modern, efficient, and sustainable spaces that meet our clients’ needs.
-</p>
-
-<a href="contact.html" style="
-margin-top:20px;
-padding:15px 25px;
+/* BUTTON */
+.btn {
 background:#ff9900;
+padding:15px 25px;
 color:white;
 text-decoration:none;
+margin-top:20px;
 border-radius:5px;
-font-weight:bold;
-">
-Get a Quote
-</a>
+}
+
+/* ABOUT */
+.about {
+padding:60px;
+text-align:center;
+background:#f4f4f4;
+}
+
+/* FOOTER */
+footer {
+background:#1e3a5f;
+color:#ffd700;
+padding:20px;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+<div><strong>Waheguru Builders Ltd</strong></div>
+<div>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+
+<h1 style="font-size:50px;">Building the Future</h1>
+
+<p style="max-width:700px;">
+We are a professional UK construction and development company delivering high-quality residential and commercial projects. From modern housing developments to full property refurbishments, we bring expertise, innovation, and precision to every build.
+</p>
+
+<p style="max-width:700px;">
+Our experienced team includes architects, structural engineers, and skilled tradesmen, ensuring every project is completed to the highest standards.
+</p>
+
+<a href="contact.html" class="btn">Get a Quote</a>
 
 </div>
 
-<!-- ABOUT SECTION -->
-<div style="padding:50px;text-align:center;">
-<h2>Building the Future with Confidence</h2>
+<!-- ABOUT -->
+<div class="about">
+
+<h2>Trusted Construction Experts Across the UK</h2>
 
 <p style="max-width:800px;margin:auto;">
-At Waheguru Builders Ltd, we specialise in creating strong foundations for homes and businesses. Whether it’s a small renovation or a large-scale development, we focus on quality craftsmanship, modern techniques, and customer satisfaction. Our goal is to deliver projects that stand the test of time while adding value to your property.
+At Waheguru Builders Ltd, we specialise in new builds, extensions, renovations, and full-scale property development. Our mission is to deliver durable, modern, and high-quality construction solutions tailored to each client’s vision.
 </p>
+
 </div>
 
 <!-- FOOTER -->
-<footer style="background:#1e3a5f;color:#ffd700;padding:20px;text-align:center;">
+<footer>
 📍 8 Ash Lane, Windsor, SL44PS | 📞 +44-7424479788 | ✉️ wahegurubuilders@gmail.com
 </footer>
 

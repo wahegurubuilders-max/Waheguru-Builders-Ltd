@@ -141,31 +141,43 @@ text-align:center;
 📍 8 Ash Lane, Windsor | 📞 +44-7424479788 | ✉️ wahegurubuilders@gmail.com
 </footer>
   
-<a href="https://wa.me/447424479788" target="_blank" style="
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:white;
-padding:14px 18px;
-border-radius:50px;
-display:flex;
-align-items:center;
-gap:8px;
-font-weight:600;
-text-decoration:none;
-box-shadow:0 8px 20px rgba(0,0,0,0.3);
-z-index:1000;
-transition:0.3s;
-">
-
-<!-- ICON -->
-<span style="font-size:20px;">💬</span>
-
-<!-- TEXT -->
-<span>WhatsApp</span>
-
+<a href="https://wa.me/447424479788" target="_blank" class="whatsapp-btn">
+  <span class="icon">💬</span>
+  <span class="text">Chat on WhatsApp</span>
 </a>
-  
+
+<style>
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #25D366, #1ebe5d);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.whatsapp-btn .icon {
+  font-size: 20px;
+}
+
+.whatsapp-btn .text {
+  font-size: 14px;
+}
+</style>
 </body>
 </html>

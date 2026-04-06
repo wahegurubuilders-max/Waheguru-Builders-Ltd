@@ -11,7 +11,7 @@ margin:0;
 font-family:'Segoe UI',sans-serif;
 }
 
-/* HEADER */
+/* HEADER (EXACT SAME AS OTHER PAGES) */
 .nav{
 position:fixed;
 top:0;
@@ -37,6 +37,17 @@ gap:25px;
 margin-right:70px;
 }
 
+.menu a{
+color:#333;
+text-decoration:none;
+font-weight:500;
+white-space:nowrap;
+}
+
+.menu a:hover{
+color:#d4af37;
+}
+
 /* HERO */
 .hero{
 height:60vh;
@@ -44,6 +55,7 @@ background:
 linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
 url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
 background-size:cover;
+background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -77,7 +89,7 @@ transition:0.3s;
 transform:scale(1.05);
 }
 
-/* POPUP (ZOOM VIEW) */
+/* POPUP */
 .popup{
 display:none;
 position:fixed;
@@ -121,9 +133,14 @@ max-width:1200px;
 margin:auto;
 }
 
-.footer-logo img{height:120px;}
+.footer-logo img{
+height:120px;
+}
 
-.footer-details p{margin:6px 0;color:#555;}
+.footer-details p{
+margin:6px 0;
+color:#555;
+}
 
 </style>
 </head>
@@ -132,7 +149,10 @@ margin:auto;
 
 <!-- NAV -->
 <div class="nav">
-<div class="logo"><a href="index.html"><img src="logo.png"></a></div>
+
+<div class="logo">
+<a href="index.html"><img src="logo.png"></a>
+</div>
 
 <div class="menu">
 <a href="index.html">Home</a>
@@ -141,6 +161,7 @@ margin:auto;
 <a href="reviews.html">Reviews</a>
 <a href="contact.html">Contact</a>
 </div>
+
 </div>
 
 <!-- HERO -->
@@ -168,6 +189,7 @@ margin:auto;
 
 <!-- FOOTER -->
 <footer>
+
 <div class="footer-container">
 
 <div class="footer-logo">
@@ -183,6 +205,7 @@ margin:auto;
 </div>
 
 </div>
+
 </footer>
 
 <!-- SCRIPT -->

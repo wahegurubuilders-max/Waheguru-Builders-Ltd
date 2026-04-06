@@ -20,22 +20,28 @@ top:0;
 width:100%;
 display:flex;
 align-items:center;
+justify-content:center;
 padding:15px 40px;
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
 }
 
-/* LOGO */
+/* LOGO LEFT */
+.logo {
+position:absolute;
+left:30px;
+}
+
 .logo img {
 height:50px;
 }
 
-/* MENU (SHIFTED LEFT) */
+/* MENU CENTER + SHIFT RIGHT */
 .menu {
 display:flex;
 gap:25px;
-margin-left:120px; /* THIS moves menu left */
+margin-left:80px; /* moves menu RIGHT */
 }
 
 .menu a {

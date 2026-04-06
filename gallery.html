@@ -155,19 +155,41 @@ height:120px;
 }
 
 /* WHATSAPP */
-.wa-float{
+  .wa-float{
 position:fixed;
-bottom:20px;
-right:20px;
-width:60px;
-height:60px;
-background:#25D366;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+background:linear-gradient(135deg,#25D366,#128C7E);
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-color:white;
-font-size:26px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+z-index:1000;
+}
+
+.wa-float svg{
+width:30px;
+fill:white;
+}
+
+.wa-float::after{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+border-radius:50%;
+background:rgba(37,211,102,0.5);
+z-index:-1;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);opacity:0.6;}
+70%{transform:scale(1.6);opacity:0;}
+100%{opacity:0;}
 }
 
 /* MOBILE */
@@ -278,8 +300,11 @@ height:90px;
 </footer>
 
 <!-- WHATSAPP -->
-<a href="https://wa.me/447424479788" class="wa-float">💬</a>
-
+<a href="https://wa.me/447424479788" target="_blank" class="wa-float">
+<svg viewBox="0 0 32 32">
+<path d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.89.76 5.71 2.205 8.192L.22 32l7.59-1.975A15.91 15.91 0 0016 32c8.836 0 16-7.164 16-16.004z"/>
+</svg>
+</a>
 <!-- SCRIPT -->
 <script>
 

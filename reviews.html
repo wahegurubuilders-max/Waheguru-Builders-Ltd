@@ -8,29 +8,76 @@
 
 body{margin:0;font-family:'Segoe UI',sans-serif;color:#111;}
 
-/* HEADER */
+/* HEADER (EXACT SAME AS OTHER PAGES) */
 .nav{
-position:fixed;top:0;width:100%;
-display:flex;justify-content:space-between;
-padding:15px 40px;background:white;border-bottom:1px solid #eee;
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:15px 40px;
+background:white;
+border-bottom:1px solid #eee;
+z-index:1000;
 }
 
-.logo img{height:50px;transform:scale(1.78);}
+.logo img{
+height:50px;
+transform:scale(1.78);
+transform-origin:left center;
+}
 
-.menu{display:flex;gap:25px;margin-right:70px;}
+.menu{
+display:flex;
+gap:25px;
+margin-right:70px;
+}
 
+.menu a{
+color:#333;
+text-decoration:none;
+font-weight:500;
+white-space:nowrap;
+}
+
+.menu a:hover{
+color:#d4af37;
+}
+
+/* HERO */
 .hero{
 height:50vh;
-background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+background:
+linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
 url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
 background-size:cover;
-display:flex;align-items:center;justify-content:center;
+display:flex;
+justify-content:center;
+align-items:center;
 color:white;
+text-align:center;
+}
+
+.hero h1{
+font-size:40px;
 }
 
 /* SECTION */
-.section{padding:80px 20px;text-align:center;background:#fafafa;}
+.section{
+padding:100px 20px;
+background:#fafafa;
+text-align:center;
+}
 
+/* EMPTY MESSAGE */
+.empty{
+color:#777;
+font-size:16px;
+margin-bottom:40px;
+}
+
+/* REVIEWS GRID */
 .reviews{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -41,34 +88,41 @@ margin:auto;
 
 /* CARD */
 .review-card{
-background:white;padding:25px;border-radius:10px;
+background:white;
+padding:25px;
+border-radius:10px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
 text-align:left;
 }
 
-.stars{color:#d4af37;font-size:18px;margin-bottom:10px;}
+/* STARS */
+.stars{
+color:#d4af37;
+font-size:18px;
+margin-bottom:10px;
+}
 
 /* FORM */
 .form{
 max-width:500px;
-margin:50px auto;
+margin:60px auto 0 auto;
 background:white;
 padding:30px;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+border-radius:12px;
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
 }
 
 input,textarea{
 width:100%;
-padding:10px;
+padding:12px;
 margin:10px 0;
 border:1px solid #ccc;
 border-radius:5px;
 }
 
-/* STAR INPUT */
+/* STAR SELECT */
 .star-select span{
-font-size:25px;
+font-size:26px;
 cursor:pointer;
 color:#ccc;
 }
@@ -79,22 +133,59 @@ color:#d4af37;
 
 /* BUTTON */
 .btn{
-padding:12px 25px;
-background:#d4af37;
+margin-top:10px;
+padding:14px 30px;
+background:linear-gradient(135deg,#d4af37,#b8962e);
 border:none;
-border-radius:30px;
+border-radius:50px;
+font-weight:600;
 cursor:pointer;
-font-weight:bold;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+transition:0.3s;
 }
 
-/* FOOTER */
-footer{background:white;padding:40px;border-top:1px solid #eee;}
+.btn:hover{
+transform:translateY(-3px);
+}
+
+/* FOOTER (MATCHED) */
+footer{
+background:white;
+padding:40px;
+border-top:1px solid #eee;
+}
+
+.footer-container{
+display:flex;
+align-items:center;
+gap:50px;
+max-width:1200px;
+margin:auto;
+}
+
+.footer-logo img{
+height:120px;
+}
+
+.footer-details p{
+margin:6px 0;
+color:#555;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.nav{flex-direction:column;align-items:flex-start;padding:10px 20px;}
+.menu{flex-wrap:wrap;gap:10px;margin-top:10px;}
+.footer-container{flex-direction:column;align-items:flex-start;}
+.footer-logo img{height:90px;}
+}
 
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
 <div class="logo"><a href="index.html"><img src="logo.png"></a></div>
 
@@ -107,27 +198,22 @@ footer{background:white;padding:40px;border-top:1px solid #eee;}
 </div>
 </div>
 
+<!-- HERO -->
 <div class="hero">
 <h1>Customer Reviews</h1>
 </div>
 
+<!-- SECTION -->
 <div class="section">
 
-<!-- REVIEWS DISPLAY -->
-<div class="reviews" id="reviewsList">
+<p class="empty">No reviews yet. Be the first to share your experience.</p>
 
-<div class="review-card">
-<div class="stars">★★★★★</div>
-<p>Excellent work and professional service.</p>
-<b>— John Smith</b>
-</div>
-
-</div>
+<div class="reviews" id="reviewsList"></div>
 
 <!-- FORM -->
 <div class="form">
 
-<h3>Leave a Review</h3>
+<h3>Leave Your Feedback</h3>
 
 <input type="text" id="name" placeholder="Your Name">
 
@@ -139,7 +225,7 @@ footer{background:white;padding:40px;border-top:1px solid #eee;}
 <span onclick="setRating(5)">★</span>
 </div>
 
-<textarea id="message" placeholder="Write your feedback"></textarea>
+<textarea id="message" placeholder="Describe your experience"></textarea>
 
 <button class="btn" onclick="addReview()">Submit Review</button>
 
@@ -147,10 +233,25 @@ footer{background:white;padding:40px;border-top:1px solid #eee;}
 
 </div>
 
+<!-- FOOTER -->
 <footer>
-<p style="text-align:center;">© Waheguru Builders Ltd</p>
+<div class="footer-container">
+
+<div class="footer-logo">
+<img src="logo.png">
+</div>
+
+<div class="footer-details">
+<p><strong>Waheguru Builders Ltd</strong></p>
+<p>Company No: 14736396</p>
+<p>📍 Windsor</p>
+<p>📞 +44-7424479788</p>
+</div>
+
+</div>
 </footer>
 
+<!-- SCRIPT -->
 <script>
 
 let rating = 0;
@@ -174,7 +275,7 @@ alert("Please complete all fields");
 return;
 }
 
-let stars = "★★★★★".slice(0,rating) + "☆☆☆☆☆".slice(rating);
+let stars = "★★★★★".slice(0,rating);
 
 let reviewHTML = `
 <div class="review-card">
@@ -185,6 +286,8 @@ let reviewHTML = `
 `;
 
 document.getElementById("reviewsList").innerHTML += reviewHTML;
+
+document.querySelector(".empty").style.display="none";
 
 /* RESET */
 document.getElementById("name").value="";

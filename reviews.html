@@ -6,13 +6,7 @@
 
 <style>
 
-/* GLOBAL */
-body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-color:#111;
-line-height:1.6;
-}
+body{margin:0;font-family:'Segoe UI',sans-serif;color:#111;}
 
 /* HEADER */
 .nav{
@@ -22,7 +16,7 @@ width:100%;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:18px 40px;
+padding:15px 40px;
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
@@ -30,43 +24,40 @@ z-index:1000;
 
 .logo img{
 height:50px;
-transform:scale(1.75);
+transform:scale(1.78);
 transform-origin:left center;
 }
 
 .menu{
 display:flex;
 gap:25px;
-margin-right:60px;
+margin-right:70px;
 }
 
 .menu a{
-text-decoration:none;
 color:#333;
+text-decoration:none;
 font-weight:500;
-}
-
-.menu a:hover{
-color:#d4af37;
 }
 
 /* HERO */
 .hero{
 height:55vh;
 background:
-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
 url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c');
 background-size:cover;
 background-position:center;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 color:white;
 text-align:center;
 }
 
 .hero h1{
 font-size:42px;
+letter-spacing:1px;
 }
 
 /* SECTION */
@@ -82,7 +73,7 @@ color:#777;
 margin-bottom:40px;
 }
 
-/* REVIEWS GRID */
+/* REVIEWS */
 .reviews{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -159,7 +150,7 @@ color:#ccc;
 color:#d4af37;
 }
 
-/* LUXURY BUTTON */
+/* ⭐ LUXURY BUTTON */
 .btn{
 margin-top:15px;
 padding:15px 40px;
@@ -168,15 +159,38 @@ color:#111;
 border:none;
 border-radius:50px;
 font-weight:600;
+letter-spacing:0.5px;
 cursor:pointer;
 position:relative;
 overflow:hidden;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
-transition:0.3s;
+transition:all 0.3s ease;
 }
 
+/* SHINE EFFECT */
+.btn::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);
+transition:0.6s;
+}
+
+.btn:hover::before{
+left:100%;
+}
+
+/* HOVER */
 .btn:hover{
-transform:translateY(-3px);
+transform:translateY(-3px) scale(1.03);
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.btn:active{
+transform:scale(0.97);
 }
 
 /* FOOTER */
@@ -188,85 +202,25 @@ border-top:1px solid #eee;
 
 .footer-container{
 display:flex;
+align-items:center;
 gap:50px;
 max-width:1200px;
 margin:auto;
 }
 
-.footer-logo img{
-height:120px;
+.footer-logo img{height:120px;}
+
+.footer-details p{
+margin:6px 0;
+color:#555;
 }
 
-/* WHATSAPP */
-  .wa-float{
-position:fixed;
-bottom:25px;
-right:25px;
-width:65px;
-height:65px;
-background:linear-gradient(135deg,#25D366,#128C7E);
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
-z-index:1000;
-}
-
-.wa-float svg{
-width:30px;
-fill:white;
-}
-
-.wa-float::after{
-content:'';
-position:absolute;
-width:100%;
-height:100%;
-border-radius:50%;
-background:rgba(37,211,102,0.5);
-z-index:-1;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);opacity:0.6;}
-70%{transform:scale(1.6);opacity:0;}
-100%{opacity:0;}
-}
-
-
-.nav{
-flex-direction:column;
-align-items:flex-start;
-padding:10px 20px;
-}
-
-.menu{
-flex-wrap:wrap;
-margin-top:10px;
-}
-
-.hero{
-height:50vh;
-}
-
-.hero h1{
-font-size:28px;
-}
-
-.footer-container{
-flex-direction:column;
-}
-
-.footer-logo img{
-height:90px;
-}
-
-.form{
-width:90%;
-}
-
+/* MOBILE */
+@media(max-width:768px){
+.nav{flex-direction:column;align-items:flex-start;padding:10px 20px;}
+.menu{flex-wrap:wrap;gap:10px;margin-top:10px;}
+.footer-container{flex-direction:column;}
+.footer-logo img{height:90px;}
 }
 
 </style>
@@ -330,23 +284,16 @@ width:90%;
 <img src="logo.png">
 </div>
 
-<div>
+<div class="footer-details">
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
-<p>📍 8 Ash Lane, Windsor, SL44PS</p>
+<p>📍 8 Ash Lane, Windsor</p>
 <p>📞 +44-7424479788</p>
 <p>✉️ wahegurubuilders@gmail.com</p>
 </div>
 
 </div>
 </footer>
-
-<!-- WHATSAPP -->
-<a href="https://wa.me/447424479788" target="_blank" class="wa-float">
-<svg viewBox="0 0 32 32">
-<path d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.89.76 5.71 2.205 8.192L.22 32l7.59-1.975A15.91 15.91 0 0016 32c8.836 0 16-7.164 16-16.004z"/>
-</svg>
-</a>
 
 <!-- SCRIPT -->
 <script>
@@ -388,6 +335,7 @@ document.getElementById("reviewsList").innerHTML += reviewHTML;
 
 document.querySelector(".empty").style.display="none";
 
+/* RESET */
 document.getElementById("name").value="";
 document.getElementById("message").value="";
 setRating(0);

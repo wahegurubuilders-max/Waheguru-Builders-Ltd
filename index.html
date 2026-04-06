@@ -3,196 +3,78 @@
 <head>
 <title>Waheguru Builders Ltd</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
-
-body{margin:0;font-family:'Segoe UI',sans-serif;color:#111;}
+body{margin:0;font-family:'Segoe UI',sans-serif;color:#111}
 
 /* HEADER */
 .nav{
 position:fixed;top:0;width:100%;
 display:flex;align-items:center;
-padding:18px 40px;background:white;
-border-bottom:1px solid #eee;z-index:1000;
+padding:18px 40px;background:#fff;border-bottom:1px solid #eee;z-index:1000;
 }
-
-.logo img{
-height:50px;
-transform:scale(1.7);
-transform-origin:left;
-}
-
-.menu{
-margin-left:auto;
-display:flex;
-gap:25px;
-}
-
-.menu a{
-text-decoration:none;
-color:#333;
-font-weight:500;
-position:relative;
-}
-
-.menu a::after{
-content:'';
-position:absolute;
-left:0;bottom:-5px;
-width:0;height:2px;
-background:#d4af37;
-transition:0.3s;
-}
-
-.menu a:hover{
-color:#d4af37;
-}
-
-.menu a:hover::after{
-width:100%;
-}
+.logo img{height:50px;transform:scale(1.7);transform-origin:left;}
+.menu{margin-left:auto;display:flex;gap:25px;}
+.menu a{color:#333;text-decoration:none;position:relative;}
+.menu a::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:2px;background:#d4af37;transition:.3s;}
+.menu a:hover{color:#d4af37;}
+.menu a:hover::after{width:100%;}
 
 /* HERO */
 .hero{
-height:100vh;
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+height:100vh;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
 url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c');
-background-size:cover;
-display:flex;align-items:center;justify-content:center;
-text-align:center;color:white;
+background-size:cover;display:flex;align-items:center;justify-content:center;
+text-align:center;color:#fff;padding:20px;
 }
+.hero h1{font-size:48px;margin:0 0 10px}
+.hero p{margin:10px 0 25px}
 
-.hero-content{max-width:700px;}
-
-.hero h1{font-size:48px;}
-.hero p{margin:15px 0;}
-
+/* BUTTON */
 .btn{
-display:inline-block;
-padding:15px 40px;
-background:linear-gradient(135deg,#d4af37,#f5d76e,#b8962e);
-border-radius:50px;
-text-decoration:none;
-color:#111;
-font-weight:600;
-letter-spacing:0.5px;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-transition:all 0.3s ease;
-position:relative;
-overflow:hidden;
+padding:14px 35px;border-radius:50px;
+background:linear-gradient(135deg,#d4af37,#f5d76e);
+color:#000;text-decoration:none;font-weight:600;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
 
-/* HOVER EFFECT */
-.btn:hover{
-transform:translateY(-4px) scale(1.03);
-box-shadow:0 20px 50px rgba(0,0,0,0.4);
-}
-
-/* SHINE EFFECT */
-.btn::before{
-content:'';
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,0.6),transparent);
-transition:0.5s;
-}
-
-.btn:hover::before{
-left:100%;
-}
 /* SECTION */
-.section{
-padding:100px 20px;
-text-align:center;
-background:#fafafa;
-}
+.section{padding:100px 20px;text-align:center;background:#fafafa}
 
+/* CARDS (CLEAN GLOW ONLY) */
+.cards{display:flex;flex-wrap:wrap;gap:25px;justify-content:center}
 .card{
-width:260px;
-padding:25px;
-background:white;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:all 0.3s ease;
-cursor:pointer;
-position:relative;
+width:260px;padding:25px;background:#fff;border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.25s;
 }
-
-/* GOLD HOVER EFFECT */
 .card:hover{
-transform:translateY(-10px) scale(1.05);
-box-shadow:0 20px 50px rgba(0,0,0,0.2);
-border:1px solid #d4af37;
+transform:translateY(-6px);
+box-shadow:0 15px 35px rgba(212,175,55,.25);
 }
 
-/* GOLD GLOW LINE */
-.card::after{
-content:'';
-position:absolute;
-bottom:0;
-left:50%;
-width:0%;
-height:3px;
-background:#d4af37;
-transition:0.3s;
-transform:translateX(-50%);
-}
-
-.card:hover::after{
-width:60%;
-}
 /* WHY */
-.why{
-display:flex;
-flex-wrap:wrap;
-gap:25px;
-justify-content:center;
-}
+.why{display:flex;flex-wrap:wrap;gap:25px;justify-content:center}
 
 /* FOOTER */
-footer{
-padding:40px;
-background:white;
-border-top:1px solid #eee;
-}
-
+footer{padding:40px;background:#fff;border-top:1px solid #eee}
 .footer-container{
-display:flex;
-gap:40px;
-align-items:center;
-max-width:1200px;
-margin:auto;
+display:flex;gap:40px;align-items:center;max-width:1200px;margin:auto;
 }
+.footer-logo img{height:110px}
 
-.footer-logo img{height:110px;}
-
-/* WHATSAPP */
+/* WHATSAPP (ICON + GLOW) */
 .wa-float{
-position:fixed;
-bottom:25px;
-right:25px;
-width:60px;height:60px;
-background:#25D366;
-border-radius:50%;
+position:fixed;bottom:25px;right:25px;
+width:60px;height:60px;background:#25D366;border-radius:50%;
 display:flex;align-items:center;justify-content:center;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
-z-index:9999;
+box-shadow:0 10px 25px rgba(0,0,0,.3);z-index:9999;
 }
-
-.wa-float svg{width:28px;fill:white;}
-
+.wa-float svg{width:28px;fill:#fff;}
 .wa-float::after{
-content:'';
-position:absolute;
-width:100%;height:100%;
-border-radius:50%;
-background:rgba(37,211,102,0.4);
+content:'';position:absolute;width:100%;height:100%;
+border-radius:50%;background:rgba(37,211,102,.4);
 animation:pulse 2s infinite;
 }
-
 @keyframes pulse{
 0%{transform:scale(1);}
 70%{transform:scale(1.6);opacity:0;}
@@ -201,12 +83,11 @@ animation:pulse 2s infinite;
 
 /* MOBILE */
 @media(max-width:768px){
-.nav{flex-direction:column;align-items:flex-start;}
-.menu{margin-top:10px;flex-wrap:wrap;}
-.cards{flex-direction:column;align-items:center;}
-.footer-container{flex-direction:column;}
+.nav{flex-direction:column;align-items:flex-start}
+.menu{margin-top:10px;flex-wrap:wrap}
+.cards{flex-direction:column;align-items:center}
+.footer-container{flex-direction:column}
 }
-
 </style>
 </head>
 
@@ -214,7 +95,6 @@ animation:pulse 2s infinite;
 
 <div class="nav">
 <div class="logo"><img src="logo.png"></div>
-
 <div class="menu">
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
@@ -225,7 +105,7 @@ animation:pulse 2s infinite;
 </div>
 
 <div class="hero">
-<div class="hero-content">
+<div>
 <h1>WAHEGURU BUILDERS LIMITED</h1>
 <p>Premium construction delivering quality, trust and excellence</p>
 <a href="contact.html" class="btn">Get a Quote</a>
@@ -269,7 +149,7 @@ animation:pulse 2s infinite;
 
 <a href="https://wa.me/447424479788" class="wa-float">
 <svg viewBox="0 0 24 24">
-<path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.48 0 .15 5.33.15 11.9c0 2.1.55 4.15 1.6 5.95L0 24l6.3-1.65a11.86 11.86 0 005.75 1.46h.01c6.57 0 11.9-5.33 11.9-11.9 0-3.18-1.24-6.16-3.44-8.43z"/>
+<path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.48 0 .15 5.33.15 11.9c0 2.1.55 4.15 1.6 5.95L0 24l6.3-1.65a11.86 11.86 0 005.75 1.46h.01c6.57 0 11.9-5.33 11.9-11.9z"/>
 </svg>
 </a>
 

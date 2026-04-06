@@ -6,34 +6,66 @@
 
 <style>
 
-body{margin:0;font-family:'Segoe UI',sans-serif;color:#111;}
+/* GLOBAL */
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+color:#111;
+}
 
 /* HEADER */
 .nav{
-position:fixed;top:0;width:100%;
-display:flex;align-items:center;justify-content:space-between;
-padding:18px 40px;background:white;border-bottom:1px solid #eee;z-index:1000;
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 40px;
+background:white;
+border-bottom:1px solid #eee;
+z-index:1000;
 }
 
-.logo img{height:50px;transform:scale(1.75);transform-origin:left;}
+.logo img{
+height:50px;
+transform:scale(1.75);
+transform-origin:left center;
+}
 
-.menu{display:flex;gap:25px;margin-right:60px;}
+.menu{
+display:flex;
+gap:25px;
+margin-right:60px;
+}
 
 .menu a{
-text-decoration:none;color:#333;font-weight:500;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+.menu a:hover{
+color:#d4af37;
 }
 
 /* HERO */
 .hero{
 height:60vh;
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+background:
+linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
 url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
 background-size:cover;
-display:flex;align-items:center;justify-content:center;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
 color:white;
 }
 
-.hero h1{font-size:42px;}
+.hero h1{
+font-size:42px;
+}
 
 /* GALLERY */
 .gallery{
@@ -41,36 +73,64 @@ padding:100px 20px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:20px;
-max-width:1200px;margin:auto;
+max-width:1200px;
+margin:auto;
 }
 
 .gallery img{
-width:100%;height:260px;object-fit:cover;
-border-radius:12px;cursor:pointer;
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:12px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
 }
 
 /* POPUP */
 .popup{
 display:none;
-position:fixed;top:0;left:0;width:100%;height:100%;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
 background:rgba(0,0,0,0.95);
-justify-content:center;align-items:center;z-index:2000;
+justify-content:center;
+align-items:center;
+z-index:2000;
 }
 
 .popup img{
-max-width:90%;max-height:90%;
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+touch-action:none;
 }
 
 .popup span{
-position:absolute;top:20px;right:30px;
-font-size:30px;color:white;cursor:pointer;
+position:absolute;
+top:20px;
+right:30px;
+font-size:30px;
+color:white;
+cursor:pointer;
 }
 
-/* NAV BUTTONS */
+/* BUTTONS */
 .nav-btn{
-position:absolute;top:50%;transform:translateY(-50%);
-font-size:40px;color:white;cursor:pointer;
-padding:10px;background:rgba(0,0,0,0.4);
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:40px;
+color:white;
+cursor:pointer;
+padding:10px 20px;
+background:rgba(0,0,0,0.4);
+border-radius:5px;
 }
 
 .prev{left:20px;}
@@ -78,65 +138,77 @@ padding:10px;background:rgba(0,0,0,0.4);
 
 /* FOOTER */
 footer{
-background:white;padding:40px;border-top:1px solid #eee;
+background:white;
+padding:40px;
+border-top:1px solid #eee;
 }
 
 .footer-container{
-display:flex;gap:50px;max-width:1200px;margin:auto;
+display:flex;
+gap:50px;
+max-width:1200px;
+margin:auto;
 }
 
-.footer-logo img{height:120px;}
+.footer-logo img{
+height:120px;
+}
 
-/* ✅ WHATSAPP FIXED */
+/* WHATSAPP */
 .wa-float{
 position:fixed;
-bottom:25px;
-right:25px;
-width:65px;
-height:65px;
-background:linear-gradient(135deg,#25D366,#128C7E);
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+background:#25D366;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
-z-index:3000; /* IMPORTANT FIX */
-}
-
-.wa-float svg{
-width:30px;
-fill:white;
-}
-
-.wa-float::after{
-content:'';
-position:absolute;
-width:100%;
-height:100%;
-border-radius:50%;
-background:rgba(37,211,102,0.5);
-z-index:-1;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);opacity:0.6;}
-70%{transform:scale(1.6);opacity:0;}
-100%{opacity:0;}
+color:white;
+font-size:26px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-.nav{flex-direction:column;align-items:flex-start;padding:10px 20px;}
-.menu{flex-wrap:wrap;margin-top:10px;}
-.hero h1{font-size:28px;}
-.footer-container{flex-direction:column;}
-.footer-logo img{height:90px;}
 
-.wa-float{
-width:55px;height:55px;
-bottom:15px;right:15px;
+.nav{
+flex-direction:column;
+align-items:flex-start;
+padding:10px 20px;
 }
+
+.menu{
+flex-wrap:wrap;
+margin-top:10px;
+}
+
+.hero{
+height:50vh;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.gallery{
+padding:80px 10px;
+gap:12px;
+}
+
+.gallery img{
+height:200px;
+}
+
+.footer-container{
+flex-direction:column;
+}
+
+.footer-logo img{
+height:90px;
+}
+
 }
 
 </style>
@@ -144,6 +216,7 @@ bottom:15px;right:15px;
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
 <div class="logo"><a href="index.html"><img src="logo.png"></a></div>
 
@@ -156,28 +229,43 @@ bottom:15px;right:15px;
 </div>
 </div>
 
+<!-- HERO -->
 <div class="hero">
 <h1>Our Projects</h1>
 </div>
 
+<!-- GALLERY -->
 <div class="gallery">
+
 <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" onclick="openImage(0)">
 <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd" onclick="openImage(1)">
 <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d" onclick="openImage(2)">
 <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154" onclick="openImage(3)">
 <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" onclick="openImage(4)">
+<img src="https://images.unsplash.com/photo-1599423300746-b62533397364" onclick="openImage(5)">
+
 </div>
 
+<!-- POPUP -->
 <div class="popup" id="popup">
+
 <span onclick="closeImage()">×</span>
+
 <div class="nav-btn prev" onclick="prevImage()">❮</div>
 <div class="nav-btn next" onclick="nextImage()">❯</div>
+
 <img id="popup-img">
+
 </div>
 
+<!-- FOOTER -->
 <footer>
 <div class="footer-container">
-<div class="footer-logo"><img src="logo.png"></div>
+
+<div class="footer-logo">
+<img src="logo.png">
+</div>
+
 <div>
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
@@ -185,32 +273,32 @@ bottom:15px;right:15px;
 <p>📞 +44-7424479788</p>
 <p>✉️ wahegurubuilders@gmail.com</p>
 </div>
+
 </div>
 </footer>
 
-<!-- ✅ WHATSAPP -->
-<a href="https://wa.me/447424479788" target="_blank" class="wa-float">
-<svg viewBox="0 0 32 32">
-<path d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.89.76 5.71 2.205 8.192L.22 32l7.59-1.975A15.91 15.91 0 0016 32c8.836 0 16-7.164 16-16.004z"/>
-</svg>
-</a>
+<!-- WHATSAPP -->
+<a href="https://wa.me/447424479788" class="wa-float">💬</a>
 
+<!-- SCRIPT -->
 <script>
 
-let images=[
+let images = [
 "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
 "https://images.unsplash.com/photo-1504307651254-35680f356dfd",
 "https://images.unsplash.com/photo-1600585154526-990dced4db0d",
 "https://images.unsplash.com/photo-1600607688969-a5bfcd646154",
-"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c"
+"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+"https://images.unsplash.com/photo-1599423300746-b62533397364"
 ];
 
-let current=0;
+let currentIndex = 0;
+let startX = 0;
 
-function openImage(i){
-current=i;
+function openImage(index){
+currentIndex = index;
 document.getElementById("popup").style.display="flex";
-document.getElementById("popup-img").src=images[i];
+document.getElementById("popup-img").src = images[currentIndex];
 }
 
 function closeImage(){
@@ -218,14 +306,28 @@ document.getElementById("popup").style.display="none";
 }
 
 function nextImage(){
-current=(current+1)%images.length;
-document.getElementById("popup-img").src=images[current];
+currentIndex = (currentIndex + 1) % images.length;
+document.getElementById("popup-img").src = images[currentIndex];
 }
 
 function prevImage(){
-current=(current-1+images.length)%images.length;
-document.getElementById("popup-img").src=images[current];
+currentIndex = (currentIndex - 1 + images.length) % images.length;
+document.getElementById("popup-img").src = images[currentIndex];
 }
+
+/* SWIPE */
+const popupImg = document.getElementById("popup-img");
+
+popupImg.addEventListener("touchstart", e=>{
+startX = e.touches[0].clientX;
+});
+
+popupImg.addEventListener("touchend", e=>{
+let endX = e.changedTouches[0].clientX;
+
+if(startX - endX > 50){ nextImage(); }
+else if(endX - startX > 50){ prevImage(); }
+});
 
 </script>
 

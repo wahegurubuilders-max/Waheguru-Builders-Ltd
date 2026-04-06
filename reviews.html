@@ -5,21 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body{text-align:center;font-family:Arial;}
-.nav{display:flex;justify-content:space-between;padding:15px 40px;background:#111;}
-.nav a{color:white;margin:15px;text-decoration:none;}
+body{text-align:center;font-family:'Segoe UI';margin:0;}
 
-.review{margin:20px;padding:20px;border:1px solid #ddd;}
+.nav{position:fixed;width:100%;display:flex;justify-content:space-between;padding:15px 40px;background:white;}
+.logo img{height:50px;transform:scale(1.78);}
+.menu{display:flex;gap:25px;margin-right:70px;}
 
-footer{background:#111;color:#ccc;padding:20px;}
+.section{padding-top:120px;}
+
+.review{
+background:#f9f9f9;
+margin:20px;
+padding:20px;
+border-radius:10px;
+}
+
+/* FOOTER */
+footer{background:white;padding:40px;border-top:1px solid #eee;}
+.footer-container{display:flex;align-items:center;gap:50px;max-width:1200px;margin:auto;}
+.footer-logo img{height:120px;}
+.footer-details p{margin:6px 0;color:#555;}
+
 </style>
 </head>
 
 <body>
 
 <div class="nav">
-<a href="index.html"><img src="logo.png" style="height:60px;"></a>
-<div>
+<div class="logo"><a href="index.html"><img src="logo.png"></a></div>
+<div class="menu">
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
 <a href="gallery.html">Gallery</a>
@@ -28,15 +42,26 @@ footer{background:#111;color:#ccc;padding:20px;}
 </div>
 </div>
 
-<h1>Customer Reviews</h1>
+<div class="section">
+<h2>Customer Reviews</h2>
 
-<div class="review">Soon</div>
-<div class="review">Soon</div>
-<div class="review">⭐⭐⭐⭐⭐</div>
+<div class="review">⭐️⭐️⭐️⭐️⭐️ Excellent work, very professional</div>
+<div class="review">⭐️⭐️⭐️⭐️ Great service and on time</div>
 
-<footer>📍 Windsor | 📞 +44-7424479788</footer>
+</div>
 
-<a href="https://wa.me/447424479788" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;">💬</a>
+<footer>
+<div class="footer-container">
+<div class="footer-logo"><img src="logo.png"></div>
+<div class="footer-details">
+<p><strong>Waheguru Builders Ltd</strong></p>
+<p>Company No: 14736396</p>
+<p>📍 8 Ash Lane, Windsor, SL44PS</p>
+<p>📞 +44-7424479788</p>
+<p>✉️ wahegurubuilders@gmail.com</p>
+</div>
+</div>
+</footer>
 
 </body>
 </html>

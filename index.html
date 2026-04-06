@@ -11,7 +11,6 @@ body {
 margin:0;
 font-family: 'Segoe UI', sans-serif;
 color:#111;
-background:#fff;
 }
 
 /* NAVBAR */
@@ -33,18 +32,17 @@ color:#333;
 margin:0 15px;
 text-decoration:none;
 font-weight:500;
-transition:0.3s;
 }
 
 .nav a:hover {
 color:#d4af37;
 }
 
-/* HERO */
+/* HERO FULL IMAGE */
 .hero {
 height:100vh;
 background:
-linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)),
+linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
 url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c');
 background-size:cover;
 background-position:center;
@@ -53,34 +51,26 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
+color:white;
 }
 
-/* HERO BOX */
-.hero-box {
-background:rgba(255,255,255,0.96);
-padding:50px;
-border-radius:12px;
-max-width:650px;
-box-shadow:0 15px 40px rgba(0,0,0,0.1);
-}
-
+/* HERO TEXT */
 .hero h1 {
-font-size:36px;
+font-size:42px;
 margin-bottom:5px;
 letter-spacing:1px;
 }
 
-/* SLOGAN */
 .slogan {
-font-size:16px;
-color:#777;
+font-size:18px;
 margin-bottom:15px;
+color:#f0f0f0;
 }
 
-/* TEXT */
 .hero p {
 font-size:15px;
-color:#444;
+max-width:600px;
+margin:auto;
 }
 
 /* BUTTON */
@@ -93,11 +83,6 @@ text-decoration:none;
 border-radius:6px;
 font-weight:600;
 display:inline-block;
-transition:0.3s;
-}
-
-.btn:hover {
-background:#c19d2f;
 }
 
 /* SERVICES */
@@ -127,7 +112,7 @@ transition:0.3s;
 transform:translateY(-8px);
 }
 
-/* FOOTER (MATCH HEADER) */
+/* FOOTER */
 footer {
 background:white;
 color:#333;
@@ -182,7 +167,7 @@ transform: scale(1.1);
 <!-- HERO -->
 <div class="hero">
 
-<div class="hero-box">
+<div>
 
 <h1>WAHEGURU BUILDERS LIMITED</h1>
 
@@ -223,11 +208,9 @@ Premium construction & development company delivering modern, high-quality build
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/447424479788" target="_blank" class="wa-float">
-
 <svg viewBox="0 0 32 32" width="26" height="26">
 <path fill="white" d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.89.76 5.71 2.205 8.192L.22 32l7.59-1.975A15.91 15.91 0 0016 32c8.836 0 16-7.164 16-16.004z"/>
 </svg>
-
 </a>
 
 </body>

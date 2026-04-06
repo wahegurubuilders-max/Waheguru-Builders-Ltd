@@ -40,38 +40,39 @@ text-decoration:none;
 font-weight:500;
 }
 
-/* HERO */
+/* HERO (BIG IMAGE LIKE HOMEPAGE) */
 .hero{
-height:50vh;
+height:80vh;
 background:
-linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
+linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+url('services-bg.jpg');
 background-size:cover;
 background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
-color:white;
 text-align:center;
+color:white;
+padding:20px;
 }
 
-.hero h1{font-size:40px;}
+.hero h1{
+font-size:45px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+color:#eee;
+}
 
 /* SECTION */
 .section{
-padding:100px 20px;
+padding:80px 20px;
 text-align:center;
 background:#fafafa;
 }
 
-.section p{
-max-width:700px;
-margin:auto;
-margin-bottom:40px;
-color:#555;
-}
-
-/* CARDS */
 .cards{
 display:flex;
 flex-wrap:wrap;
@@ -127,7 +128,6 @@ margin:auto;
 
 <!-- NAV -->
 <div class="nav">
-
 <div class="logo">
 <a href="index.html"><img src="logo.png"></a>
 </div>
@@ -139,51 +139,49 @@ margin:auto;
 <a href="reviews.html">Reviews</a>
 <a href="contact.html">Contact</a>
 </div>
-
 </div>
 
 <!-- HERO -->
 <div class="hero">
+<div>
 <h1>Our Services</h1>
+<p>Delivering high-quality construction solutions with precision and trust</p>
+</div>
 </div>
 
 <!-- SERVICES -->
 <div class="section">
 
-<p>
-We provide a wide range of professional construction services, delivering high-quality workmanship from start to finish. Our experienced team ensures every project is completed to the highest standard.
-</p>
-
 <div class="cards">
 
 <div class="card">
 <h3>New Builds</h3>
-<p>Complete construction solutions from foundation to finishing, tailored to your requirements.</p>
+<p>Complete construction from foundation to finish with modern standards.</p>
 </div>
 
 <div class="card">
 <h3>Loft Conversions</h3>
-<p>Transform unused loft space into modern, functional living areas.</p>
+<p>Maximise your space with stylish and practical loft designs.</p>
 </div>
 
 <div class="card">
 <h3>Extensions</h3>
-<p>Expand your property with high-quality extensions that add value and space.</p>
+<p>Expand your home with high-quality extensions built to last.</p>
 </div>
 
 <div class="card">
 <h3>Kitchen Renovation</h3>
-<p>Modern kitchen designs and installations to enhance your home.</p>
+<p>Modern kitchens designed for comfort, style, and functionality.</p>
 </div>
 
 <div class="card">
 <h3>Bathroom Renovation</h3>
-<p>Stylish and practical bathroom upgrades with quality finishes.</p>
+<p>Premium bathroom upgrades with elegant finishes.</p>
 </div>
 
 <div class="card">
 <h3>Roofing</h3>
-<p>Reliable roofing services including repairs, replacements, and new installations.</p>
+<p>Reliable roofing solutions including repairs and new installations.</p>
 </div>
 
 </div>
@@ -192,7 +190,6 @@ We provide a wide range of professional construction services, delivering high-q
 
 <!-- FOOTER -->
 <footer>
-
 <div class="footer-container">
 
 <div class="footer-logo">
@@ -208,7 +205,6 @@ We provide a wide range of professional construction services, delivering high-q
 </div>
 
 </div>
-
 </footer>
 
 </body>

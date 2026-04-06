@@ -7,64 +7,151 @@
 <style>
 
 /* GLOBAL */
-body{margin:0;font-family:'Segoe UI',sans-serif;color:#111;line-height:1.6;}
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+color:#111;
+line-height:1.6;
+}
 
 /* HEADER */
 .nav{
-position:fixed;top:0;width:100%;
-display:flex;align-items:center;justify-content:space-between;
-padding:18px 40px;background:white;border-bottom:1px solid #eee;z-index:1000;
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 40px;
+background:white;
+border-bottom:1px solid #eee;
+z-index:1000;
 }
-.logo img{height:50px;transform:scale(1.75);transform-origin:left;}
-.menu{display:flex;gap:25px;margin-right:60px;}
-.menu a{text-decoration:none;color:#333;font-weight:500;}
+
+.logo img{
+height:50px;
+transform:scale(1.75);
+transform-origin:left;
+}
+
+.menu{
+display:flex;
+gap:25px;
+margin-right:60px;
+}
+
+.menu a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
 .menu a:hover{color:#d4af37;}
 
 /* HERO */
 .hero{
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
 url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c');
-background-size:cover;display:flex;align-items:center;justify-content:center;
-text-align:center;color:white;padding:20px;
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
 }
-.hero h1{font-size:48px;}
-.hero p{max-width:600px;margin:auto;}
+
+.hero-content{
+max-width:700px;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:30px; /* FIXED spacing */
+}
 
 /* BUTTON */
 .btn{
-margin-top:20px;padding:14px 35px;
+display:inline-block;
+padding:15px 40px;
 background:linear-gradient(135deg,#d4af37,#f5d76e,#b8962e);
-border-radius:50px;text-decoration:none;color:black;
+border-radius:50px;
+text-decoration:none;
+color:black;
+font-weight:600;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
 }
 
 /* SECTION */
-.section{padding:100px 20px;text-align:center;background:#fafafa;}
+.section{
+padding:100px 20px;
+text-align:center;
+background:#fafafa;
+}
 
-.cards{display:flex;flex-wrap:wrap;gap:25px;justify-content:center;}
+.cards{
+display:flex;
+flex-wrap:wrap;
+gap:25px;
+justify-content:center;
+}
+
 .card{
-width:260px;padding:25px;background:white;border-radius:10px;
+width:260px;
+padding:25px;
+background:white;
+border-radius:10px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-/* PROJECTS */
-.projects{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:15px;max-width:1200px;margin:auto;
-}
-.projects img{width:100%;height:250px;object-fit:cover;border-radius:10px;}
-
 /* FOOTER */
-footer{background:white;padding:40px;border-top:1px solid #eee;}
-.footer-container{display:flex;gap:50px;max-width:1200px;margin:auto;}
+footer{
+background:white;
+padding:40px;
+border-top:1px solid #eee;
+}
+
+.footer-container{
+display:flex;
+gap:50px;
+max-width:1200px;
+margin:auto;
+}
+
 .footer-logo img{height:120px;}
 
-/* WHATSAPP */
-.wa-float{
-position:fixed;bottom:20px;right:20px;width:60px;height:60px;
-background:#25D366;border-radius:50%;display:flex;align-items:center;
-justify-content:center;color:white;font-size:26px;
+/* PREMIUM WHATSAPP */
+.wa-premium{
+position:fixed;
+bottom:25px;
+right:25px;
+display:flex;
+align-items:center;
+gap:10px;
+padding:12px 18px;
+background:linear-gradient(135deg,#25D366,#128C7E);
+border-radius:50px;
+color:white;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+z-index:1000;
+}
+
+.wa-premium:hover{
+transform:scale(1.05);
 }
 
 /* MOBILE */
@@ -72,6 +159,7 @@ justify-content:center;color:white;font-size:26px;
 .nav{flex-direction:column;align-items:flex-start;padding:10px 20px;}
 .menu{flex-wrap:wrap;margin-top:10px;}
 .hero h1{font-size:28px;}
+.hero p{font-size:14px;}
 .cards{flex-direction:column;align-items:center;}
 .footer-container{flex-direction:column;}
 .footer-logo img{height:90px;}
@@ -94,7 +182,7 @@ justify-content:center;color:white;font-size:26px;
 </div>
 
 <div class="hero">
-<div>
+<div class="hero-content">
 <h1>WAHEGURU BUILDERS LIMITED</h1>
 <p>Premium construction delivering quality, trust and excellence</p>
 <a href="contact.html" class="btn">Get a Quote</a>
@@ -125,7 +213,7 @@ justify-content:center;color:white;font-size:26px;
 </div>
 </footer>
 
-<a href="https://wa.me/447424479788" class="wa-float">💬</a>
+<a href="https://wa.me/447424479788" class="wa-premium">💬 Chat</a>
 
 </body>
 </html>

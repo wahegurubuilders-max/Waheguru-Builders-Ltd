@@ -13,7 +13,7 @@ font-family: 'Segoe UI', sans-serif;
 color:#111;
 }
 
-/* NAVBAR (UNCHANGED) */
+/* NAVBAR */
 .nav {
 position:fixed;
 top:0;
@@ -21,17 +21,17 @@ width:100%;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:15px 40px; /* DO NOT CHANGE */
+padding:15px 40px;
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
 }
 
-/* LOGO (BIGGER WITHOUT CHANGING HEADER) */
+/* LOGO */
 .logo img {
 height:50px;
-transform: scale(1.78); /* BIGGER */
-transform-origin: left center;
+transform:scale(1.78);
+transform-origin:left center;
 }
 
 /* MENU */
@@ -118,13 +118,31 @@ border-radius:10px;
 box-shadow:0 8px 20px rgba(0,0,0,0.06);
 }
 
-/* FOOTER */
+/* FOOTER (NEW PREMIUM STYLE) */
 footer {
 background:white;
-color:#333;
-padding:20px;
-text-align:center;
+padding:40px;
 border-top:1px solid #eee;
+}
+
+.footer-container {
+display:flex;
+align-items:center;
+gap:40px;
+max-width:1200px;
+margin:auto;
+}
+
+/* BIG LOGO */
+.footer-logo img {
+height:90px;
+}
+
+/* DETAILS */
+.footer-details p {
+margin:6px 0;
+color:#555;
+font-size:14px;
 }
 
 /* WHATSAPP */
@@ -206,7 +224,22 @@ Premium construction & development company delivering modern, high-quality build
 
 <!-- FOOTER -->
 <footer>
-📍 8 Ash Lane, Windsor | 📞 +44-7424479788 | ✉️ wahegurubuilders@gmail.com
+
+<div class="footer-container">
+
+<div class="footer-logo">
+<img src="logo.png">
+</div>
+
+<div class="footer-details">
+<p><strong>Waheguru Builders Ltd</strong></p>
+<p>📍 8 Ash Lane, Windsor, SL44PS</p>
+<p>📞 +44-7424479788</p>
+<p>✉️ wahegurubuilders@gmail.com</p>
+</div>
+
+</div>
+
 </footer>
 
 <!-- WHATSAPP -->

@@ -7,212 +7,72 @@
 <style>
 
 /* GLOBAL */
-body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-color:#111;
-line-height:1.6;
-}
+body{margin:0;font-family:'Segoe UI',sans-serif;color:#111;line-height:1.6;}
 
 /* HEADER */
 .nav{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:18px 50px;
-background:white;
-border-bottom:1px solid #eee;
-z-index:1000;
+position:fixed;top:0;width:100%;
+display:flex;align-items:center;justify-content:space-between;
+padding:18px 40px;background:white;border-bottom:1px solid #eee;z-index:1000;
 }
-
-.logo img{
-height:50px;
-transform:scale(1.75);
-transform-origin:left center;
-}
-
-.menu{
-display:flex;
-gap:30px;
-margin-right:60px;
-}
-
-.menu a{
-color:#333;
-text-decoration:none;
-font-weight:500;
-transition:0.3s;
-}
-
-.menu a:hover{
-color:#d4af37;
-}
+.logo img{height:50px;transform:scale(1.75);transform-origin:left;}
+.menu{display:flex;gap:25px;margin-right:60px;}
+.menu a{text-decoration:none;color:#333;font-weight:500;}
+.menu a:hover{color:#d4af37;}
 
 /* HERO */
 .hero{
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
 url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c');
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-padding:20px;
+background-size:cover;display:flex;align-items:center;justify-content:center;
+text-align:center;color:white;padding:20px;
 }
-
-.hero h1{
-font-size:52px;
-margin-bottom:15px;
-}
-
-.hero p{
-font-size:18px;
-max-width:600px;
-margin:auto;
-}
+.hero h1{font-size:48px;}
+.hero p{max-width:600px;margin:auto;}
 
 /* BUTTON */
 .btn{
-margin-top:25px;
-padding:15px 40px;
+margin-top:20px;padding:14px 35px;
 background:linear-gradient(135deg,#d4af37,#f5d76e,#b8962e);
-border-radius:50px;
-font-weight:600;
-text-decoration:none;
-color:black;
+border-radius:50px;text-decoration:none;color:black;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
-transition:0.3s;
-display:inline-block;
-}
-
-.btn:hover{
-transform:translateY(-3px);
 }
 
 /* SECTION */
-.section{
-padding:100px 20px;
-text-align:center;
-background:#fafafa;
-}
+.section{padding:100px 20px;text-align:center;background:#fafafa;}
 
-/* CARDS */
-.cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
-}
-
+.cards{display:flex;flex-wrap:wrap;gap:25px;justify-content:center;}
 .card{
-width:260px;
-padding:30px;
-background:white;
-border-radius:12px;
+width:260px;padding:25px;background:white;border-radius:10px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-}
-
-/* WHY */
-.why{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
-max-width:1000px;
-margin:auto;
-}
-
-.why-box{
-width:220px;
-font-weight:500;
 }
 
 /* PROJECTS */
 .projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-max-width:1200px;
-margin:auto;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:15px;max-width:1200px;margin:auto;
 }
-
-.projects img{
-width:100%;
-height:260px;
-object-fit:cover;
-border-radius:12px;
-transition:0.3s;
-}
-
-.projects img:hover{
-transform:scale(1.05);
-}
+.projects img{width:100%;height:250px;object-fit:cover;border-radius:10px;}
 
 /* FOOTER */
-footer{
-background:white;
-padding:50px 20px;
-border-top:1px solid #eee;
-}
-
-.footer-container{
-display:flex;
-align-items:center;
-gap:60px;
-max-width:1200px;
-margin:auto;
-}
-
-.footer-logo img{
-height:120px;
-}
-
-.footer-details p{
-margin:6px 0;
-color:#555;
-}
+footer{background:white;padding:40px;border-top:1px solid #eee;}
+.footer-container{display:flex;gap:50px;max-width:1200px;margin:auto;}
+.footer-logo img{height:120px;}
 
 /* WHATSAPP */
 .wa-float{
-position:fixed;
-bottom:25px;
-right:25px;
-width:65px;
-height:65px;
-background:linear-gradient(135deg,#25D366,#128C7E);
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
-70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
-100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+position:fixed;bottom:20px;right:20px;width:60px;height:60px;
+background:#25D366;border-radius:50%;display:flex;align-items:center;
+justify-content:center;color:white;font-size:26px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-.nav{flex-direction:column;align-items:flex-start;padding:12px 20px;}
-.menu{flex-wrap:wrap;gap:12px;margin-top:10px;}
-.hero h1{font-size:30px;}
-.hero p{font-size:14px;}
+.nav{flex-direction:column;align-items:flex-start;padding:10px 20px;}
+.menu{flex-wrap:wrap;margin-top:10px;}
+.hero h1{font-size:28px;}
 .cards{flex-direction:column;align-items:center;}
-.card{width:90%;}
 .footer-container{flex-direction:column;}
 .footer-logo img{height:90px;}
 }
@@ -222,10 +82,8 @@ animation:pulse 2s infinite;
 
 <body>
 
-<!-- NAV -->
 <div class="nav">
 <div class="logo"><img src="logo.png"></div>
-
 <div class="menu">
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
@@ -235,7 +93,6 @@ animation:pulse 2s infinite;
 </div>
 </div>
 
-<!-- HERO -->
 <div class="hero">
 <div>
 <h1>WAHEGURU BUILDERS LIMITED</h1>
@@ -244,7 +101,6 @@ animation:pulse 2s infinite;
 </div>
 </div>
 
-<!-- SERVICES -->
 <div class="section">
 <h2>Our Expertise</h2>
 <div class="cards">
@@ -256,45 +112,20 @@ animation:pulse 2s infinite;
 </div>
 </div>
 
-<!-- WHY -->
-<div class="section">
-<h2>Why Choose Us</h2>
-<div class="why">
-<div class="why-box">✔ Experienced Team</div>
-<div class="why-box">✔ High Quality Work</div>
-<div class="why-box">✔ On Time Delivery</div>
-<div class="why-box">✔ Competitive Pricing</div>
-</div>
-</div>
-
-<!-- PROJECTS -->
-<div class="section">
-<h2>Recent Projects</h2>
-<div class="projects">
-<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d">
-<img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154">
-<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c">
-</div>
-</div>
-
-<!-- FOOTER -->
 <footer>
 <div class="footer-container">
-
-<div class="footer-logo">
-<img src="logo.png">
-</div>
-
-<div class="footer-details">
+<div class="footer-logo"><img src="logo.png"></div>
+<div>
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
 <p>📍 8 Ash Lane, Windsor, SL44PS</p>
 <p>📞 +44-7424479788</p>
 <p>✉️ wahegurubuilders@gmail.com</p>
 </div>
-
 </div>
 </footer>
+
+<a href="https://wa.me/447424479788" class="wa-float">💬</a>
 
 </body>
 </html>

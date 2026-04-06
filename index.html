@@ -140,43 +140,55 @@ text-align:center;
 <footer>
 📍 8 Ash Lane, Windsor | 📞 +44-7424479788 | ✉️ wahegurubuilders@gmail.com
 </footer>
+  <!-- WhatsApp Button -->
+<a href="https://wa.me/447424479788" target="_blank" class="wa-float">
   
-<a href="https://wa.me/447424479788" target="_blank" class="whatsapp-btn">
-  <span class="icon">💬</span>
-  <span class="text">Chat on WhatsApp</span>
+  <!-- WhatsApp SVG Icon -->
+  <svg viewBox="0 0 32 32" width="28" height="28">
+    <path fill="white" d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.89.76 5.71 2.205 8.192L.22 32l7.59-1.975A15.91 15.91 0 0016 32c8.836 0 16-7.164 16-16.004C32 7.56 24.836.396 16 .396zm0 29.29a13.2 13.2 0 01-6.72-1.84l-.48-.28-4.5 1.17 1.2-4.38-.31-.45a13.22 13.22 0 1110.81 5.78zm7.29-9.86c-.4-.2-2.36-1.17-2.73-1.3-.37-.14-.64-.2-.91.2-.27.4-1.04 1.3-1.28 1.57-.23.27-.47.3-.87.1-.4-.2-1.7-.62-3.24-1.97-1.2-1.07-2.02-2.38-2.26-2.78-.23-.4-.02-.62.18-.82.18-.18.4-.47.6-.7.2-.23.27-.4.4-.67.14-.27.07-.5-.03-.7-.1-.2-.91-2.2-1.25-3.02-.33-.8-.67-.7-.91-.7h-.77c-.27 0-.7.1-1.07.5-.37.4-1.4 1.37-1.4 3.33s1.44 3.85 1.64 4.12c.2.27 2.84 4.33 6.9 6.08.97.42 1.72.67 2.3.86.97.3 1.86.26 2.56.16.78-.12 2.36-.97 2.7-1.9.34-.94.34-1.74.24-1.9-.1-.17-.37-.27-.77-.47z"/>
+  </svg>
+
 </a>
 
 <style>
-.whatsapp-btn {
+.wa-float {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  background: linear-gradient(135deg, #25D366, #1ebe5d);
-  color: white;
-  padding: 12px 18px;
-  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-family: Arial, sans-serif;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   z-index: 1000;
   transition: all 0.3s ease;
 }
 
-.whatsapp-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+/* Hover effect */
+.wa-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
 
-.whatsapp-btn .icon {
-  font-size: 20px;
+/* Soft pulse animation */
+.wa-float::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.4);
+  animation: pulse 2s infinite;
+  z-index: -1;
 }
 
-.whatsapp-btn .text {
-  font-size: 14px;
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  70% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
 }
 </style>
 </body>

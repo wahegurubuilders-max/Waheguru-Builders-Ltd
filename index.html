@@ -46,7 +46,9 @@ color:#333;
 font-weight:500;
 }
 
-.menu a:hover{color:#d4af37;}
+.menu a:hover{
+color:#d4af37;
+}
 
 /* HERO */
 .hero{
@@ -74,7 +76,7 @@ margin-bottom:15px;
 
 .hero p{
 font-size:18px;
-margin-bottom:30px; /* FIXED spacing */
+margin-bottom:30px; /* FIXED ALIGNMENT */
 }
 
 /* BUTTON */
@@ -130,28 +132,52 @@ max-width:1200px;
 margin:auto;
 }
 
-.footer-logo img{height:120px;}
+.footer-logo img{
+height:120px;
+}
 
-/* PREMIUM WHATSAPP */
-.wa-premium{
+/* 🔥 PREMIUM WHATSAPP ICON */
+.wa-float{
 position:fixed;
 bottom:25px;
 right:25px;
+width:65px;
+height:65px;
+background:linear-gradient(135deg,#25D366,#128C7E);
+border-radius:50%;
 display:flex;
 align-items:center;
-gap:10px;
-padding:12px 18px;
-background:linear-gradient(135deg,#25D366,#128C7E);
-border-radius:50px;
-color:white;
-text-decoration:none;
-font-weight:600;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
+justify-content:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
 z-index:1000;
+transition:0.3s;
 }
 
-.wa-premium:hover{
-transform:scale(1.05);
+.wa-float svg{
+width:30px;
+fill:white;
+}
+
+.wa-float:hover{
+transform:scale(1.1) translateY(-3px);
+box-shadow:0 15px 40px rgba(0,0,0,0.5);
+}
+
+.wa-float::after{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+border-radius:50%;
+background:rgba(37,211,102,0.5);
+z-index:-1;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);opacity:0.6;}
+70%{transform:scale(1.6);opacity:0;}
+100%{opacity:0;}
 }
 
 /* MOBILE */
@@ -163,6 +189,13 @@ transform:scale(1.05);
 .cards{flex-direction:column;align-items:center;}
 .footer-container{flex-direction:column;}
 .footer-logo img{height:90px;}
+
+.wa-float{
+width:55px;
+height:55px;
+bottom:15px;
+right:15px;
+}
 }
 
 </style>
@@ -170,8 +203,10 @@ transform:scale(1.05);
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
 <div class="logo"><img src="logo.png"></div>
+
 <div class="menu">
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
@@ -181,6 +216,7 @@ transform:scale(1.05);
 </div>
 </div>
 
+<!-- HERO -->
 <div class="hero">
 <div class="hero-content">
 <h1>WAHEGURU BUILDERS LIMITED</h1>
@@ -189,6 +225,7 @@ transform:scale(1.05);
 </div>
 </div>
 
+<!-- SERVICES -->
 <div class="section">
 <h2>Our Expertise</h2>
 <div class="cards">
@@ -200,9 +237,14 @@ transform:scale(1.05);
 </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
 <div class="footer-container">
-<div class="footer-logo"><img src="logo.png"></div>
+
+<div class="footer-logo">
+<img src="logo.png">
+</div>
+
 <div>
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
@@ -210,10 +252,16 @@ transform:scale(1.05);
 <p>📞 +44-7424479788</p>
 <p>✉️ wahegurubuilders@gmail.com</p>
 </div>
+
 </div>
 </footer>
 
-<a href="https://wa.me/447424479788" class="wa-premium">💬 Chat</a>
+<!-- WHATSAPP -->
+<a href="https://wa.me/447424479788" target="_blank" class="wa-float">
+<svg viewBox="0 0 32 32">
+<path d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.89.76 5.71 2.205 8.192L.22 32l7.59-1.975A15.91 15.91 0 0016 32c8.836 0 16-7.164 16-16.004z"/>
+</svg>
+</a>
 
 </body>
 </html>

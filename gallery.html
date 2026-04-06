@@ -106,6 +106,7 @@ z-index:2000;
 max-width:90%;
 max-height:90%;
 border-radius:10px;
+touch-action:none; /* IMPORTANT FOR SWIPE */
 }
 
 /* CLOSE */
@@ -118,7 +119,7 @@ color:white;
 cursor:pointer;
 }
 
-/* NEXT / PREV BUTTONS */
+/* BUTTONS */
 .nav-btn{
 position:absolute;
 top:50%;
@@ -131,13 +132,8 @@ background:rgba(0,0,0,0.4);
 border-radius:5px;
 }
 
-.prev{
-left:20px;
-}
-
-.next{
-right:20px;
-}
+.prev{left:20px;}
+.next{right:20px;}
 
 /* FOOTER */
 footer{
@@ -154,14 +150,9 @@ max-width:1200px;
 margin:auto;
 }
 
-.footer-logo img{
-height:120px;
-}
+.footer-logo img{height:120px;}
 
-.footer-details p{
-margin:6px 0;
-color:#555;
-}
+.footer-details p{margin:6px 0;color:#555;}
 
 </style>
 </head>
@@ -170,10 +161,7 @@ color:#555;
 
 <!-- NAV -->
 <div class="nav">
-
-<div class="logo">
-<a href="index.html"><img src="logo.png"></a>
-</div>
+<div class="logo"><a href="index.html"><img src="logo.png"></a></div>
 
 <div class="menu">
 <a href="index.html">Home</a>
@@ -182,7 +170,6 @@ color:#555;
 <a href="reviews.html">Reviews</a>
 <a href="contact.html">Contact</a>
 </div>
-
 </div>
 
 <!-- HERO -->
@@ -216,12 +203,8 @@ color:#555;
 
 <!-- FOOTER -->
 <footer>
-
 <div class="footer-container">
-
-<div class="footer-logo">
-<img src="logo.png">
-</div>
+<div class="footer-logo"><img src="logo.png"></div>
 
 <div class="footer-details">
 <p><strong>Waheguru Builders Ltd</strong></p>
@@ -230,9 +213,7 @@ color:#555;
 <p>📞 +44-7424479788</p>
 <p>✉️ wahegurubuilders@gmail.com</p>
 </div>
-
 </div>
-
 </footer>
 
 <!-- SCRIPT -->
@@ -248,17 +229,21 @@ let images = [
 ];
 
 let currentIndex = 0;
+let startX = 0;
 
+/* OPEN */
 function openImage(index){
 currentIndex = index;
 document.getElementById("popup").style.display="flex";
 document.getElementById("popup-img").src = images[currentIndex];
 }
 
+/* CLOSE */
 function closeImage(){
 document.getElementById("popup").style.display="none";
 }
 
+/* NEXT / PREV */
 function nextImage(){
 currentIndex = (currentIndex + 1) % images.length;
 document.getElementById("popup-img").src = images[currentIndex];
@@ -268,6 +253,24 @@ function prevImage(){
 currentIndex = (currentIndex - 1 + images.length) % images.length;
 document.getElementById("popup-img").src = images[currentIndex];
 }
+
+/* SWIPE SUPPORT */
+const popupImg = document.getElementById("popup-img");
+
+popupImg.addEventListener("touchstart", function(e){
+startX = e.touches[0].clientX;
+});
+
+popupImg.addEventListener("touchend", function(e){
+let endX = e.changedTouches[0].clientX;
+
+if(startX - endX > 50){
+nextImage(); // swipe left
+}
+else if(endX - startX > 50){
+prevImage(); // swipe right
+}
+});
 
 </script>
 

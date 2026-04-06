@@ -6,10 +6,12 @@
 
 <style>
 
+/* GLOBAL */
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
 color:#111;
+line-height:1.6;
 }
 
 /* HEADER */
@@ -20,7 +22,7 @@ width:100%;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:15px 40px;
+padding:18px 40px;
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
@@ -28,33 +30,37 @@ z-index:1000;
 
 .logo img{
 height:50px;
-transform:scale(1.78);
+transform:scale(1.75);
 transform-origin:left center;
 }
 
 .menu{
 display:flex;
 gap:25px;
-margin-right:70px;
+margin-right:60px;
 }
 
 .menu a{
-color:#333;
 text-decoration:none;
+color:#333;
 font-weight:500;
+}
+
+.menu a:hover{
+color:#d4af37;
 }
 
 /* HERO */
 .hero{
 height:55vh;
 background:
-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
 url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154');
 background-size:cover;
 background-position:center;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 color:white;
 text-align:center;
 }
@@ -91,6 +97,24 @@ margin:12px 0;
 color:#555;
 }
 
+/* WHATSAPP BOX */
+.whatsapp-box{
+margin-top:20px;
+padding:15px;
+background:#25D366;
+color:white;
+border-radius:10px;
+text-align:center;
+text-decoration:none;
+font-weight:600;
+display:block;
+transition:0.3s;
+}
+
+.whatsapp-box:hover{
+transform:translateY(-2px);
+}
+
 /* FORM */
 .form{
 width:400px;
@@ -110,9 +134,10 @@ border-radius:5px;
 
 /* LUXURY BUTTON */
 .btn{
-margin-top:10px;
-padding:15px 35px;
+margin-top:15px;
+padding:15px 40px;
 background:linear-gradient(135deg,#d4af37,#f5d76e,#b8962e);
+color:#111;
 border:none;
 border-radius:50px;
 font-weight:600;
@@ -125,19 +150,6 @@ transition:0.3s;
 transform:translateY(-3px);
 }
 
-/* WHATSAPP BOX */
-.whatsapp-box{
-margin-top:20px;
-padding:15px;
-background:#25D366;
-color:white;
-border-radius:10px;
-text-align:center;
-font-weight:600;
-text-decoration:none;
-display:block;
-}
-
 /* FOOTER */
 footer{
 background:white;
@@ -147,21 +159,71 @@ border-top:1px solid #eee;
 
 .footer-container{
 display:flex;
-align-items:center;
 gap:50px;
 max-width:1200px;
 margin:auto;
 }
 
-.footer-logo img{height:120px;}
+.footer-logo img{
+height:120px;
+}
+
+/* WHATSAPP FLOAT */
+.wa-float{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:26px;
+}
 
 /* MOBILE */
 @media(max-width:768px){
-.nav{flex-direction:column;align-items:flex-start;padding:10px 20px;}
-.menu{flex-wrap:wrap;gap:10px;margin-top:10px;}
-.section{flex-direction:column;align-items:center;}
-.footer-container{flex-direction:column;}
-.footer-logo img{height:90px;}
+
+.nav{
+flex-direction:column;
+align-items:flex-start;
+padding:10px 20px;
+}
+
+.menu{
+flex-wrap:wrap;
+margin-top:10px;
+}
+
+.hero{
+height:50vh;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.section{
+flex-direction:column;
+align-items:center;
+}
+
+.contact-box,
+.form{
+width:90%;
+}
+
+.footer-container{
+flex-direction:column;
+}
+
+.footer-logo img{
+height:90px;
+}
+
 }
 
 </style>
@@ -195,7 +257,7 @@ margin:auto;
 
 <h3>Get in Touch</h3>
 
-<div class="contact-item">📍 8 Ash Lane, Windsor</div>
+<div class="contact-item">📍 8 Ash Lane, Windsor, SL44PS</div>
 <div class="contact-item">📞 +44 7424479788</div>
 <div class="contact-item">✉️ wahegurubuilders@gmail.com</div>
 
@@ -232,13 +294,16 @@ Chat on WhatsApp
 <div>
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
-<p>📍 Windsor</p>
+<p>📍 8 Ash Lane, Windsor, SL44PS</p>
 <p>📞 +44-7424479788</p>
 <p>✉️ wahegurubuilders@gmail.com</p>
 </div>
 
 </div>
 </footer>
+
+<!-- FLOAT BUTTON -->
+<a href="https://wa.me/447424479788" class="wa-float">💬</a>
 
 </body>
 </html>

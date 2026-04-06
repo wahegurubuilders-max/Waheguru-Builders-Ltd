@@ -6,38 +6,26 @@
 
 <style>
 
-/* GLOBAL */
-body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-color:#111;
-line-height:1.6;
-}
+body{margin:0;font-family:'Segoe UI',sans-serif;color:#111;}
 
 /* HEADER */
 .nav{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-align-items:center;
-padding:18px 40px;
-background:white;
-border-bottom:1px solid #eee;
-z-index:1000;
+position:fixed;top:0;width:100%;
+display:flex;align-items:center;
+padding:18px 40px;background:white;
+border-bottom:1px solid #eee;z-index:1000;
 }
 
 .logo img{
 height:50px;
-transform:scale(1.75);
+transform:scale(1.7);
 transform-origin:left;
 }
 
-/* MENU */
 .menu{
+margin-left:auto;
 display:flex;
 gap:25px;
-margin-left:auto;
 }
 
 .menu a{
@@ -45,16 +33,13 @@ text-decoration:none;
 color:#333;
 font-weight:500;
 position:relative;
-padding-bottom:5px;
 }
 
 .menu a::after{
 content:'';
 position:absolute;
-left:0;
-bottom:0;
-width:0%;
-height:2px;
+left:0;bottom:-5px;
+width:0;height:2px;
 background:#d4af37;
 transition:0.3s;
 }
@@ -73,43 +58,23 @@ height:100vh;
 background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
 url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c');
 background-size:cover;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-padding:20px;
+display:flex;align-items:center;justify-content:center;
+text-align:center;color:white;
 }
 
-.hero-content{
-max-width:700px;
-}
+.hero-content{max-width:700px;}
 
-.hero h1{
-font-size:48px;
-margin-bottom:15px;
-}
+.hero h1{font-size:48px;}
+.hero p{margin:15px 0;}
 
-.hero p{
-font-size:18px;
-margin-bottom:25px;
-}
-
-/* BUTTON */
 .btn{
 display:inline-block;
-padding:15px 40px;
-background:linear-gradient(135deg,#d4af37,#f5d76e,#b8962e);
+padding:14px 35px;
+background:linear-gradient(135deg,#d4af37,#f5d76e);
 border-radius:50px;
 text-decoration:none;
 color:black;
 font-weight:600;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-transition:0.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
 }
 
 /* SECTION */
@@ -119,7 +84,6 @@ text-align:center;
 background:#fafafa;
 }
 
-/* CARDS */
 .cards{
 display:flex;
 flex-wrap:wrap;
@@ -131,114 +95,76 @@ justify-content:center;
 width:260px;
 padding:25px;
 background:white;
-border-radius:12px;
+border-radius:10px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:all 0.3s ease;
-cursor:pointer;
+transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
+transform:translateY(-8px);
 }
 
 /* WHY */
 .why{
 display:flex;
 flex-wrap:wrap;
-gap:30px;
+gap:25px;
 justify-content:center;
-max-width:1000px;
-margin:auto;
-}
-
-.why-box{
-width:220px;
-font-weight:500;
 }
 
 /* FOOTER */
 footer{
-background:white;
 padding:40px;
+background:white;
 border-top:1px solid #eee;
 }
 
 .footer-container{
 display:flex;
-gap:50px;
+gap:40px;
+align-items:center;
 max-width:1200px;
 margin:auto;
-align-items:center;
 }
 
-.footer-logo img{
-height:120px;
-}
+.footer-logo img{height:110px;}
 
 /* WHATSAPP */
 .wa-float{
 position:fixed;
 bottom:25px;
 right:25px;
-width:65px;
-height:65px;
-background:linear-gradient(135deg,#25D366,#128C7E);
+width:60px;height:60px;
+background:#25D366;
 border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
+display:flex;align-items:center;justify-content:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
 z-index:9999;
-transition:all 0.3s ease;
 }
 
-/* ICON */
-.wa-float svg{
-width:30px;
-height:30px;
-fill:white;
-}
+.wa-float svg{width:28px;fill:white;}
 
-/* HOVER */
-.wa-float:hover{
-transform:translateY(-5px) scale(1.08);
-box-shadow:0 20px 50px rgba(0,0,0,0.5);
-}
-
-/* GLOW */
 .wa-float::after{
 content:'';
 position:absolute;
-width:100%;
-height:100%;
+width:100%;height:100%;
 border-radius:50%;
-background:rgba(37,211,102,0.5);
-z-index:-1;
+background:rgba(37,211,102,0.4);
 animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
-0%{transform:scale(1);opacity:0.6;}
+0%{transform:scale(1);}
 70%{transform:scale(1.6);opacity:0;}
 100%{opacity:0;}
 }
+
 /* MOBILE */
 @media(max-width:768px){
-.nav{flex-direction:column;align-items:flex-start;padding:10px 20px;}
-.menu{flex-wrap:wrap;margin-top:10px;}
-.hero h1{font-size:28px;}
-.hero p{font-size:14px;}
+.nav{flex-direction:column;align-items:flex-start;}
+.menu{margin-top:10px;flex-wrap:wrap;}
 .cards{flex-direction:column;align-items:center;}
 .footer-container{flex-direction:column;}
-.footer-logo img{height:90px;}
-
-.wa-float{
-width:55px;
-height:55px;
-bottom:15px;
-right:15px;
-}
 }
 
 </style>
@@ -246,7 +172,6 @@ right:15px;
 
 <body>
 
-<!-- NAV -->
 <div class="nav">
 <div class="logo"><img src="logo.png"></div>
 
@@ -259,20 +184,16 @@ right:15px;
 </div>
 </div>
 
-<!-- HERO -->
 <div class="hero">
 <div class="hero-content">
 <h1>WAHEGURU BUILDERS LIMITED</h1>
 <p>Premium construction delivering quality, trust and excellence</p>
 <a href="contact.html" class="btn">Get a Quote</a>
-<p style="margin-top:15px;font-size:14px;">Free consultation • Fast response • Trusted service</p>
 </div>
 </div>
 
-<!-- EXPERTISE -->
 <div class="section">
 <h2>Our Expertise</h2>
-
 <div class="cards">
 <div class="card">New Builds</div>
 <div class="card">Loft Conversions</div>
@@ -281,51 +202,36 @@ right:15px;
 <div class="card">Bathroom Renovation</div>
 <div class="card">Roofing</div>
 </div>
-
 </div>
 
-<!-- WHY -->
 <div class="section">
 <h2>Why Choose Us</h2>
-
 <div class="why">
-<div class="why-box">✔ Experienced Team</div>
-<div class="why-box">✔ High Quality Work</div>
-<div class="why-box">✔ On Time Delivery</div>
-<div class="why-box">✔ Competitive Pricing</div>
-<div class="why-box">✔ Fully Insured</div>
-<div class="why-box">✔ Free Quotes</div>
+<div>✔ Experienced Team</div>
+<div>✔ High Quality Work</div>
+<div>✔ On Time Delivery</div>
+<div>✔ Competitive Pricing</div>
+</div>
 </div>
 
-</div>
-
-<!-- FOOTER -->
 <footer>
 <div class="footer-container">
-
-<div class="footer-logo">
-<img src="logo.png">
-</div>
-
+<div class="footer-logo"><img src="logo.png"></div>
 <div>
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
-<p>📍 8 Ash Lane, Windsor, SL44PS</p>
+<p>📍 8 Ash Lane, Windsor</p>
 <p>📞 +44-7424479788</p>
 <p>✉️ wahegurubuilders@gmail.com</p>
 </div>
-
 </div>
 </footer>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/447424479788" target="_blank" class="wa-float">
-
-<!-- SIMPLE ICON (SAFE VERSION) -->
+<a href="https://wa.me/447424479788" class="wa-float">
 <svg viewBox="0 0 24 24">
-<path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.48 0 .15 5.33.15 11.9c0 2.1.55 4.15 1.6 5.95L0 24l6.3-1.65a11.86 11.86 0 005.75 1.46h.01c6.57 0 11.9-5.33 11.9-11.9 0-3.18-1.24-6.16-3.44-8.43zM12.06 21.4a9.5 9.5 0 01-4.83-1.33l-.35-.2-3.74.98.99-3.64-.23-.37a9.45 9.45 0 01-1.46-5.05c0-5.22 4.24-9.46 9.47-9.46 2.53 0 4.9.99 6.68 2.77a9.4 9.4 0 012.78 6.69c0 5.22-4.24 9.47-9.46 9.47zm5.2-7.05c-.28-.14-1.65-.81-1.9-.9-.26-.09-.45-.14-.64.14-.19.28-.74.9-.91 1.08-.17.19-.33.21-.61.07-.28-.14-1.17-.43-2.23-1.37-.83-.74-1.39-1.66-1.55-1.94-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.17.19-.28.28-.47.09-.19.05-.36-.02-.5-.07-.14-.64-1.55-.87-2.12-.23-.56-.46-.48-.64-.49-.16-.01-.36-.01-.55-.01-.19 0-.5.07-.76.36-.26.28-1 1-.1 2.45.9 1.45 2.14 2.84 3.68 3.77 1.54.93 2.1 1 2.86.85.76-.14 1.65-.67 1.88-1.31.23-.64.23-1.2.16-1.31-.07-.11-.26-.18-.54-.32z"/>
+<path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.48 0 .15 5.33.15 11.9c0 2.1.55 4.15 1.6 5.95L0 24l6.3-1.65a11.86 11.86 0 005.75 1.46h.01c6.57 0 11.9-5.33 11.9-11.9 0-3.18-1.24-6.16-3.44-8.43z"/>
 </svg>
-
 </a>
+
 </body>
 </html>

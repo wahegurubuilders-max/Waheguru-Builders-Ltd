@@ -235,7 +235,42 @@ gap:20px;
 height:90px;
 }
 
-/* WHATSAPP PULSE */
+/* WHATSAPP FLOAT */
+.wa-float{
+position:fixed;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+z-index:9999;
+}
+
+/* ICON */
+.wa-float svg{
+width:28px;
+height:28px;
+fill:white;
+}
+
+/* PULSE EFFECT */
+.wa-float::after{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+border-radius:50%;
+background:rgba(37,211,102,0.4);
+animation:waPulse 2s infinite;
+z-index:-1;
+}
+
+/* ANIMATION */
 @keyframes waPulse{
 0%{transform:scale(1);opacity:0.6;}
 70%{transform:scale(1.6);opacity:0;}
@@ -362,37 +397,10 @@ prevImage(); // swipe right
 
 </script>
   
-<a href="https://wa.me/447424479788" target="_blank"
-style="
-position:fixed;
-bottom:25px;
-right:25px;
-width:60px;
-height:60px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
-z-index:9999;
-">
-
-<!-- PULSE LAYER -->
-<span style="
-position:absolute;
-width:100%;
-height:100%;
-border-radius:50%;
-background:rgba(37,211,102,0.4);
-animation:waPulse 2s infinite;
-"></span>
-
-<!-- ICON -->
-<svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:white;position:relative;">
+<a href="https://wa.me/447424479788" target="_blank" class="wa-float">
+<svg viewBox="0 0 24 24">
 <path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.48 0 .15 5.33.15 11.9c0 2.1.55 4.15 1.6 5.95L0 24l6.3-1.65a11.86 11.86 0 005.75 1.46h.01c6.57 0 11.9-5.33 11.9-11.9z"/>
 </svg>
-
 </a>
   
 </body>

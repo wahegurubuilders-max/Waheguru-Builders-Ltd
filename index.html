@@ -5,33 +5,106 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body{margin:0;font-family:Arial;}
 
-.nav{
-position:absolute;top:0;width:100%;
-display:flex;justify-content:space-between;
-align-items:center;padding:15px 40px;z-index:10;
+body {
+margin:0;
+font-family: 'Segoe UI', sans-serif;
 }
 
-.nav a{color:white;margin:15px;text-decoration:none;}
+/* NAVBAR */
+.nav {
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:rgba(0,0,0,0.6);
+backdrop-filter: blur(10px);
+z-index:1000;
+}
 
-.hero{
+.nav a {
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:500;
+}
+
+/* HERO */
+.hero {
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+background:
+linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
 url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
 background-size:cover;
-display:flex;justify-content:center;align-items:center;
-text-align:center;color:white;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
 }
 
-footer{background:#111;color:#ccc;padding:20px;text-align:center;}
+.hero h1 {
+font-size:50px;
+margin-bottom:10px;
+}
+
+.hero p {
+max-width:600px;
+}
+
+/* BUTTON */
+.btn {
+margin-top:20px;
+padding:12px 25px;
+background:#d4af37;
+color:black;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
+}
+
+/* SECTION */
+.section {
+padding:80px 20px;
+text-align:center;
+}
+
+.cards {
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.card {
+width:300px;
+padding:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+border-radius:10px;
+}
+
+/* FOOTER */
+footer {
+background:#111;
+color:#ccc;
+padding:20px;
+text-align:center;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
-<a href="index.html"><img src="logo.png" style="height:70px;"></a>
+<a href="index.html"><img src="logo.png" style="height:60px;"></a>
+
 <div>
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
@@ -41,19 +114,34 @@ footer{background:#111;color:#ccc;padding:20px;text-align:center;}
 </div>
 </div>
 
+<!-- HERO -->
 <div class="hero">
 <div>
 <h1>Building Quality. Creating Trust.</h1>
-<p>Construction & development services across the UK.</p>
-<a href="contact.html" style="background:#d4af37;padding:10px 20px;color:black;text-decoration:none;">Get Quote</a>
+<p>Premium construction & development services across Windsor and the UK.</p>
+<a href="contact.html" class="btn">Get a Quote</a>
+</div>
+</div>
+
+<!-- SERVICES PREVIEW -->
+<div class="section">
+<h2>Our Expertise</h2>
+
+<div class="cards">
+<div class="card">New Builds</div>
+<div class="card">Loft Conversions</div>
+<div class="card">Extensions</div>
+<div class="card">Kitchen & Bathrooms</div>
+<div class="card">Roofing</div>
+<div class="card">Driveways</div>
 </div>
 </div>
 
 <footer>
-📍 Windsor | 📞 +44-7424479788 | ✉️ wahegurubuilders@gmail.com
+📍 8 Ash Lane, Windsor | 📞 +44-7424479788 | ✉️ wahegurubuilders@gmail.com
 </footer>
 
-<a href="https://wa.me/447424479788" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;">💬</a>
+<a href="https://wa.me/447424479788" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;font-size:20px;">💬</a>
 
 </body>
 </html>

@@ -40,7 +40,7 @@ gap:25px;
 margin-right:60px;
 }
 
-/* 🔥 PREMIUM MENU HOVER */
+/* MENU HOVER */
 .menu a{
 text-decoration:none;
 color:#333;
@@ -133,11 +133,19 @@ justify-content:center;
 width:260px;
 padding:25px;
 background:white;
-border-radius:10px;
+border-radius:12px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:all 0.3s ease;
+cursor:pointer;
 }
 
-/* WHY CHOOSE US */
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+background:linear-gradient(135deg,#ffffff,#fff9e6);
+}
+
+/* WHY */
 .why{
 display:flex;
 flex-wrap:wrap;
@@ -253,27 +261,32 @@ right:15px;
 </div>
 </div>
 
-<!-- SERVICES -->
+<!-- EXPERTISE -->
 <div class="section">
 <h2>Our Expertise</h2>
+
 <div class="cards">
 <div class="card">New Builds</div>
 <div class="card">Loft Conversions</div>
 <div class="card">Extensions</div>
 <div class="card">Kitchen Renovation</div>
+<div class="card">Bathroom Renovation</div>
 <div class="card">Roofing</div>
 </div>
+
 </div>
 
-<!-- WHY CHOOSE US -->
+<!-- WHY -->
 <div class="section">
 <h2>Why Choose Us</h2>
+
 <div class="why">
 <div class="why-box">✔ Experienced Team</div>
 <div class="why-box">✔ High Quality Work</div>
 <div class="why-box">✔ On Time Delivery</div>
 <div class="why-box">✔ Competitive Pricing</div>
 </div>
+
 </div>
 
 <!-- FOOTER -->

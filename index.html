@@ -54,10 +54,6 @@ width:260px;padding:25px;background:white;
 border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.06);
 }
 
-/* WHY */
-.why{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;}
-.why-box{width:260px;}
-
 /* PROJECTS */
 .projects{
 display:grid;
@@ -79,56 +75,51 @@ max-width:1200px;margin:auto;
 .footer-logo img{height:120px;}
 .footer-details p{margin:6px 0;color:#555;}
 
-/* PREMIUM WHATSAPP */
-.wa-btn{
+/* PREMIUM WHATSAPP FLOATING */
+.wa-float{
 position:fixed;
 bottom:25px;
 right:25px;
+width:65px;
+height:65px;
+background:linear-gradient(135deg,#25D366,#128C7E);
+border-radius:50%;
 display:flex;
 align-items:center;
-gap:10px;
-background:#25D366;
-color:white;
-padding:12px 18px;
-border-radius:50px;
-text-decoration:none;
-font-weight:600;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
+justify-content:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+z-index:1000;
+animation:pulse 2s infinite;
 transition:0.3s;
 }
 
-.wa-btn:hover{
-transform:scale(1.05);
+.wa-float:hover{
+transform:scale(1.1);
 }
 
-/* MOBILE FIX */
-@media (max-width:768px){
-
-.nav{
-flex-direction:column;
-align-items:flex-start;
-padding:10px 20px;
+.wa-float svg{
+width:32px;
+height:32px;
+fill:white;
 }
 
-.menu{
-flex-wrap:wrap;
-gap:10px;
-margin:10px 0 0 0;
+/* PULSE ANIMATION */
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
+70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
+100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
 
+/* MOBILE */
+@media(max-width:768px){
+.nav{flex-direction:column;align-items:flex-start;padding:10px 20px;}
+.menu{flex-wrap:wrap;gap:10px;margin-top:10px;}
 .hero h1{font-size:28px;}
 .hero p{font-size:14px;}
-
 .cards{flex-direction:column;align-items:center;}
 .card{width:90%;}
-
-.footer-container{
-flex-direction:column;
-align-items:flex-start;
-}
-
+.footer-container{flex-direction:column;align-items:flex-start;}
 .footer-logo img{height:90px;}
-
 }
 
 </style>
@@ -153,7 +144,7 @@ align-items:flex-start;
 <div class="hero">
 <div>
 <h1>WAHEGURU BUILDERS LIMITED</h1>
-<p>Premium construction & development delivering quality, trust and excellence</p>
+<p>Premium construction delivering quality & trust</p>
 <a href="contact.html" class="btn">Get a Quote</a>
 </div>
 </div>
@@ -170,17 +161,6 @@ align-items:flex-start;
 </div>
 </div>
 
-<!-- WHY -->
-<div class="section">
-<h2>Why Choose Us</h2>
-<div class="why">
-<div class="why-box">✔ Experienced Team</div>
-<div class="why-box">✔ High Quality Work</div>
-<div class="why-box">✔ On Time Delivery</div>
-<div class="why-box">✔ Competitive Pricing</div>
-</div>
-</div>
-
 <!-- PROJECTS -->
 <div class="section">
 <h2>Recent Projects</h2>
@@ -194,25 +174,24 @@ align-items:flex-start;
 <!-- FOOTER -->
 <footer>
 <div class="footer-container">
-
-<div class="footer-logo">
-<img src="logo.png">
-</div>
+<div class="footer-logo"><img src="logo.png"></div>
 
 <div class="footer-details">
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
-<p>📍 8 Ash Lane, Windsor</p>
+<p>📍 Windsor</p>
 <p>📞 +44-7424479788</p>
-<p>✉️ wahegurubuilders@gmail.com</p>
 </div>
-
 </div>
 </footer>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/447424479788" class="wa-btn" target="_blank">
-💬 WhatsApp
+<!-- PREMIUM WHATSAPP -->
+<a href="https://wa.me/447424479788" target="_blank" class="wa-float">
+
+<svg viewBox="0 0 32 32">
+<path d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.89.76 5.71 2.205 8.192L.22 32l7.59-1.975A15.91 15.91 0 0016 32c8.836 0 16-7.164 16-16.004z"/>
+</svg>
+
 </a>
 
 </body>

@@ -130,22 +130,49 @@ border:1px solid #ccc;
 border-radius:5px;
 }
 
-/* LUXURY BUTTON */
+/* ⭐ LUXURY BUTTON */
 .btn{
-margin-top:10px;
-padding:15px 35px;
+margin-top:15px;
+padding:15px 40px;
 background:linear-gradient(135deg,#d4af37,#f5d76e,#b8962e);
+color:#111;
 border:none;
 border-radius:50px;
 font-weight:600;
+letter-spacing:0.5px;
 cursor:pointer;
+position:relative;
+overflow:hidden;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
-transition:0.3s;
+transition:all 0.3s ease;
 }
 
-.btn:hover{
-transform:translateY(-3px);
+/* SHINE EFFECT */
+.btn::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.5),transparent);
+transition:0.6s;
 }
+
+.btn:hover::before{
+left:100%;
+}
+
+/* HOVER */
+.btn:hover{
+transform:translateY(-3px) scale(1.03);
+box-shadow:0 15px 40px rgba(0,0,0,0.4);
+}
+
+.btn:active{
+transform:scale(0.97);
+}
+
 
 /* WHATSAPP BOX */
 .whatsapp-box{
@@ -251,15 +278,6 @@ gap:20px;
 height:90px;
 }
 
-/* WHATSAPP */
-.wa-float{
-width:55px;
-height:55px;
-bottom:15px;
-right:15px;
-}
-
-}
 </style>
 </head>
 

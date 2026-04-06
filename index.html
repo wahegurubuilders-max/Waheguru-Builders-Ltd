@@ -40,14 +40,32 @@ gap:25px;
 margin-right:60px;
 }
 
+/* 🔥 PREMIUM MENU HOVER */
 .menu a{
 text-decoration:none;
 color:#333;
 font-weight:500;
+position:relative;
+padding-bottom:5px;
+}
+
+.menu a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:0;
+width:0%;
+height:2px;
+background:#d4af37;
+transition:0.3s;
 }
 
 .menu a:hover{
 color:#d4af37;
+}
+
+.menu a:hover::after{
+width:100%;
 }
 
 /* HERO */
@@ -76,7 +94,7 @@ margin-bottom:15px;
 
 .hero p{
 font-size:18px;
-margin-bottom:30px; /* FIXED ALIGNMENT */
+margin-bottom:30px;
 }
 
 /* BUTTON */
@@ -103,6 +121,7 @@ text-align:center;
 background:#fafafa;
 }
 
+/* CARDS */
 .cards{
 display:flex;
 flex-wrap:wrap;
@@ -116,6 +135,21 @@ padding:25px;
 background:white;
 border-radius:10px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* WHY CHOOSE US */
+.why{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+max-width:1000px;
+margin:auto;
+}
+
+.why-box{
+width:220px;
+font-weight:500;
 }
 
 /* FOOTER */
@@ -136,7 +170,7 @@ margin:auto;
 height:120px;
 }
 
-/* 🔥 PREMIUM WHATSAPP ICON */
+/* WHATSAPP */
 .wa-float{
 position:fixed;
 bottom:25px;
@@ -150,17 +184,11 @@ align-items:center;
 justify-content:center;
 box-shadow:0 10px 30px rgba(0,0,0,0.4);
 z-index:1000;
-transition:0.3s;
 }
 
 .wa-float svg{
 width:30px;
 fill:white;
-}
-
-.wa-float:hover{
-transform:scale(1.1) translateY(-3px);
-box-shadow:0 15px 40px rgba(0,0,0,0.5);
 }
 
 .wa-float::after{
@@ -234,6 +262,17 @@ right:15px;
 <div class="card">Extensions</div>
 <div class="card">Kitchen Renovation</div>
 <div class="card">Roofing</div>
+</div>
+</div>
+
+<!-- WHY CHOOSE US -->
+<div class="section">
+<h2>Why Choose Us</h2>
+<div class="why">
+<div class="why-box">✔ Experienced Team</div>
+<div class="why-box">✔ High Quality Work</div>
+<div class="why-box">✔ On Time Delivery</div>
+<div class="why-box">✔ Competitive Pricing</div>
 </div>
 </div>
 

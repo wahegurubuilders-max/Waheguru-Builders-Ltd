@@ -2,46 +2,43 @@
 <html>
 <head>
 <title>Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body {font-family:Arial;text-align:center;}
+body{text-align:center;font-family:Arial;}
+.nav{display:flex;justify-content:space-between;padding:15px 40px;background:#111;}
+.nav a{color:white;margin:15px;text-decoration:none;}
 
-input, textarea {
-width:80%;
-padding:10px;
-margin:10px;
-}
+input,textarea{width:80%;padding:10px;margin:10px;}
 
-footer {
-background:#111;
-color:#ccc;
-padding:20px;
-}
+footer{background:#111;color:#ccc;padding:20px;}
 </style>
-
 </head>
 
 <body>
 
+<div class="nav">
+<a href="index.html"><img src="logo.png" style="height:60px;"></a>
+<div>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+
 <h1>Get a Quote</h1>
 
-<form action="mailto:wahegurubuilders@gmail.com" method="post" enctype="text/plain">
-
-<input type="text" name="Name" placeholder="Name"><br>
-<input type="text" name="Phone" placeholder="Phone"><br>
-<input type="email" name="Email" placeholder="Email"><br>
-<input type="text" name="Address" placeholder="Address"><br>
-<input type="text" name="Job Type" placeholder="Type of Job"><br>
-
-<textarea name="Description" placeholder="Job Description"></textarea><br>
-
+<form action="mailto:wahegurubuilders@gmail.com" method="post">
+<input type="text" placeholder="Name"><br>
+<input type="text" placeholder="Phone"><br>
+<input type="email" placeholder="Email"><br>
+<textarea placeholder="Job Description"></textarea><br>
 <button type="submit">Submit</button>
-
 </form>
 
-<footer>
-📍 Windsor | 📞 +44-7424479788
-</footer>
+<footer>📍 Windsor | 📞 +44-7424479788</footer>
 
 <a href="https://wa.me/447424479788" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;">💬</a>
 

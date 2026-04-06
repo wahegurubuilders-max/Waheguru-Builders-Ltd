@@ -5,19 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body{margin:0;font-family:'Segoe UI';}
+body{margin:0;font-family:'Segoe UI',sans-serif;}
 
-/* SAME HEADER */
+/* EXACT SAME HEADER */
 .nav{
-position:fixed;top:0;width:100%;
-display:flex;align-items:center;justify-content:space-between;
-padding:15px 40px;background:white;border-bottom:1px solid #eee;
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:15px 40px;
+background:white;
+border-bottom:1px solid #eee;
+z-index:1000;
 }
 
-.logo img{height:50px;transform:scale(1.78);}
-.menu{display:flex;gap:25px;margin-right:70px;}
+.logo img{
+height:50px;
+transform:scale(1.78);
+transform-origin:left center;
+}
 
-form{padding-top:120px;text-align:center;}
+.menu{
+display:flex;
+gap:25px;
+margin-right:70px;
+}
+
+.menu a{
+color:#333;
+text-decoration:none;
+font-weight:500;
+}
+
+/* FORM */
+form{
+padding-top:120px;
+text-align:center;
+}
 
 input,textarea{
 width:80%;
@@ -28,8 +54,23 @@ border-radius:5px;
 }
 
 /* FOOTER */
-footer{background:white;padding:40px;border-top:1px solid #eee;}
-.footer-container{display:flex;align-items:center;gap:50px;max-width:1200px;margin:auto;}
+footer{
+background:white;
+padding:40px;
+border-top:1px solid #eee;
+}
+
+.footer-container{
+display:flex;
+align-items:center;
+gap:50px;
+max-width:1200px;
+margin:auto;
+}
+
+.footer-logo img{height:120px;}
+
+.footer-details p{margin:6px 0;color:#555;}
 
 </style>
 </head>
@@ -38,6 +79,7 @@ footer{background:white;padding:40px;border-top:1px solid #eee;}
 
 <div class="nav">
 <div class="logo"><a href="index.html"><img src="logo.png"></a></div>
+
 <div class="menu">
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
@@ -61,11 +103,14 @@ footer{background:white;padding:40px;border-top:1px solid #eee;}
 <footer>
 <div class="footer-container">
 <div class="footer-logo"><img src="logo.png"></div>
+
 <div class="footer-details">
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
-<p>📍 Windsor</p>
+<p>📍 8 Ash Lane, Windsor</p>
+<p>📞 +44-7424479788</p>
 </div>
+
 </div>
 </footer>
 

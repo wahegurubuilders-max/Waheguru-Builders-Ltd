@@ -5,39 +5,119 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+
 body{margin:0;font-family:'Segoe UI',sans-serif;color:#111;}
 
+/* HEADER (SAME AS INDEX) */
 .nav{
-position:fixed;top:0;width:100%;
-display:flex;align-items:center;justify-content:space-between;
-padding:15px 40px;background:white;border-bottom:1px solid #eee;
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:15px 40px;
+background:white;
+border-bottom:1px solid #eee;
+z-index:1000;
 }
 
-.logo img{height:50px;transform:scale(1.78);transform-origin:left center;}
+.logo img{
+height:50px;
+transform:scale(1.78);
+transform-origin:left center;
+}
 
-.menu{display:flex;gap:25px;margin-right:70px;}
-.menu a{text-decoration:none;color:#333;font-weight:500;}
+.menu{
+display:flex;
+gap:25px;
+margin-right:70px;
+}
 
+.menu a{
+color:#333;
+text-decoration:none;
+font-weight:500;
+}
+
+/* HERO */
 .hero{
 height:50vh;
-background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
+background:
+linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
 background-size:cover;
-display:flex;align-items:center;justify-content:center;color:white;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
 }
 
-.section{padding:100px 20px;text-align:center;background:#fafafa;}
+.hero h1{font-size:40px;}
 
-.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;}
+/* SECTION */
+.section{
+padding:100px 20px;
+text-align:center;
+background:#fafafa;
+}
+
+.section p{
+max-width:700px;
+margin:auto;
+margin-bottom:40px;
+color:#555;
+}
+
+/* CARDS */
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
+}
 
 .card{
-width:260px;padding:25px;background:white;
-border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.06);
+width:280px;
+padding:30px;
+background:white;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+transition:0.3s;
 }
 
-/* FOOTER SAME */
-footer{background:white;padding:40px;border-top:1px solid #eee;}
-.footer-container{display:flex;align-items:center;gap:50px;max-width:1200px;margin:auto;}
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.card p{
+font-size:14px;
+color:#555;
+}
+
+/* FOOTER */
+footer{
+background:white;
+padding:40px;
+border-top:1px solid #eee;
+}
+
+.footer-container{
+display:flex;
+align-items:center;
+gap:50px;
+max-width:1200px;
+margin:auto;
+}
+
 .footer-logo img{height:120px;}
+
 .footer-details p{margin:6px 0;color:#555;}
 
 </style>
@@ -45,8 +125,13 @@ footer{background:white;padding:40px;border-top:1px solid #eee;}
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
-<div class="logo"><a href="index.html"><img src="logo.png"></a></div>
+
+<div class="logo">
+<a href="index.html"><img src="logo.png"></a>
+</div>
+
 <div class="menu">
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
@@ -54,24 +139,66 @@ footer{background:white;padding:40px;border-top:1px solid #eee;}
 <a href="reviews.html">Reviews</a>
 <a href="contact.html">Contact</a>
 </div>
+
 </div>
 
-<div class="hero"><h1>Our Services</h1></div>
+<!-- HERO -->
+<div class="hero">
+<h1>Our Services</h1>
+</div>
 
+<!-- SERVICES -->
 <div class="section">
+
+<p>
+We provide a wide range of professional construction services, delivering high-quality workmanship from start to finish. Our experienced team ensures every project is completed to the highest standard.
+</p>
+
 <div class="cards">
-<div class="card">New Builds</div>
-<div class="card">Loft Conversions</div>
-<div class="card">Extensions</div>
-<div class="card">Kitchen Renovations</div>
-<div class="card">Bathroom Renovations</div>
-<div class="card">Roofing</div>
-</div>
+
+<div class="card">
+<h3>New Builds</h3>
+<p>Complete construction solutions from foundation to finishing, tailored to your requirements.</p>
 </div>
 
+<div class="card">
+<h3>Loft Conversions</h3>
+<p>Transform unused loft space into modern, functional living areas.</p>
+</div>
+
+<div class="card">
+<h3>Extensions</h3>
+<p>Expand your property with high-quality extensions that add value and space.</p>
+</div>
+
+<div class="card">
+<h3>Kitchen Renovation</h3>
+<p>Modern kitchen designs and installations to enhance your home.</p>
+</div>
+
+<div class="card">
+<h3>Bathroom Renovation</h3>
+<p>Stylish and practical bathroom upgrades with quality finishes.</p>
+</div>
+
+<div class="card">
+<h3>Roofing</h3>
+<p>Reliable roofing services including repairs, replacements, and new installations.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
 <footer>
+
 <div class="footer-container">
-<div class="footer-logo"><img src="logo.png"></div>
+
+<div class="footer-logo">
+<img src="logo.png">
+</div>
+
 <div class="footer-details">
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
@@ -79,7 +206,9 @@ footer{background:white;padding:40px;border-top:1px solid #eee;}
 <p>📞 +44-7424479788</p>
 <p>✉️ wahegurubuilders@gmail.com</p>
 </div>
+
 </div>
+
 </footer>
 
 </body>

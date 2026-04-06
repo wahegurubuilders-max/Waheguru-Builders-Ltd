@@ -6,10 +6,12 @@
 
 <style>
 
+/* GLOBAL */
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
 color:#111;
+line-height:1.6;
 }
 
 /* HEADER */
@@ -20,7 +22,7 @@ width:100%;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:15px 40px;
+padding:18px 40px;
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
@@ -28,83 +30,95 @@ z-index:1000;
 
 .logo img{
 height:50px;
-transform:scale(1.78);
+transform:scale(1.75);
 transform-origin:left center;
 }
 
 .menu{
 display:flex;
 gap:25px;
-margin-right:70px;
+margin-right:60px;
 }
 
 .menu a{
-color:#333;
 text-decoration:none;
+color:#333;
 font-weight:500;
 }
 
-/* HERO IMAGE */
+.menu a:hover{
+color:#d4af37;
+}
+
+/* HERO */
 .hero{
-height:90vh;
+height:60vh;
 background:
-linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-url('https://images.unsplash.com/photo-1600585154526-990dced4db0d');
+linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
 background-size:cover;
 background-position:center;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
 color:white;
-padding:20px;
 }
 
 .hero h1{
-font-size:48px;
-margin-bottom:10px;
-}
-
-.hero p{
-font-size:18px;
-color:#eee;
+font-size:42px;
 }
 
 /* SECTION */
 .section{
-padding:80px 20px;
-text-align:center;
+padding:100px 20px;
 background:#fafafa;
+text-align:center;
 }
 
-.cards{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:30px;
+/* SERVICES GRID */
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
 }
 
-.card{
-width:280px;
-padding:30px;
+/* CARD */
+.service-card{
 background:white;
+padding:30px;
 border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.06);
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
 transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 15px 35px rgba(0,0,0,0.1);
+.service-card:hover{
+transform:translateY(-6px);
 }
 
-.card h3{
+/* TITLE */
+.service-card h3{
 margin-bottom:10px;
 }
 
-.card p{
+/* TEXT */
+.service-card p{
 font-size:14px;
 color:#555;
+}
+
+/* BUTTON */
+.btn{
+margin-top:15px;
+padding:12px 25px;
+background:linear-gradient(135deg,#d4af37,#f5d76e,#b8962e);
+border-radius:50px;
+text-decoration:none;
+color:black;
+font-weight:600;
+display:inline-block;
 }
 
 /* FOOTER */
@@ -116,7 +130,6 @@ border-top:1px solid #eee;
 
 .footer-container{
 display:flex;
-align-items:center;
 gap:50px;
 max-width:1200px;
 margin:auto;
@@ -126,9 +139,52 @@ margin:auto;
 height:120px;
 }
 
-.footer-details p{
-margin:6px 0;
-color:#555;
+/* WHATSAPP */
+.wa-float{
+position:fixed;
+bottom:20px;
+right:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+font-size:26px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.nav{
+flex-direction:column;
+align-items:flex-start;
+padding:10px 20px;
+}
+
+.menu{
+flex-wrap:wrap;
+margin-top:10px;
+}
+
+.hero{
+height:50vh;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.footer-container{
+flex-direction:column;
+}
+
+.footer-logo img{
+height:90px;
+}
+
 }
 
 </style>
@@ -138,10 +194,7 @@ color:#555;
 
 <!-- NAV -->
 <div class="nav">
-
-<div class="logo">
-<a href="index.html"><img src="logo.png"></a>
-</div>
+<div class="logo"><a href="index.html"><img src="logo.png"></a></div>
 
 <div class="menu">
 <a href="index.html">Home</a>
@@ -150,50 +203,46 @@ color:#555;
 <a href="reviews.html">Reviews</a>
 <a href="contact.html">Contact</a>
 </div>
-
 </div>
 
 <!-- HERO -->
 <div class="hero">
-<div>
 <h1>Our Services</h1>
-<p>Delivering high-quality construction with precision & trust</p>
-</div>
 </div>
 
 <!-- SERVICES -->
 <div class="section">
 
-<div class="cards">
+<div class="services">
 
-<div class="card">
+<div class="service-card">
 <h3>New Builds</h3>
-<p>Complete construction solutions from start to finish.</p>
+<p>Complete construction services from foundation to finish with high-quality standards.</p>
+<a href="contact.html" class="btn">Get Quote</a>
 </div>
 
-<div class="card">
+<div class="service-card">
 <h3>Loft Conversions</h3>
-<p>Transform unused space into modern living areas.</p>
+<p>Transform unused space into modern living areas with professional design and build.</p>
+<a href="contact.html" class="btn">Get Quote</a>
 </div>
 
-<div class="card">
+<div class="service-card">
 <h3>Extensions</h3>
-<p>Expand your property with high-quality builds.</p>
+<p>Expand your home with seamless extensions that match your existing structure.</p>
+<a href="contact.html" class="btn">Get Quote</a>
 </div>
 
-<div class="card">
+<div class="service-card">
 <h3>Kitchen Renovation</h3>
-<p>Modern kitchens designed for style and function.</p>
+<p>Upgrade your kitchen with modern designs and premium finishes.</p>
+<a href="contact.html" class="btn">Get Quote</a>
 </div>
 
-<div class="card">
-<h3>Bathroom Renovation</h3>
-<p>Premium bathrooms with elegant finishes.</p>
-</div>
-
-<div class="card">
+<div class="service-card">
 <h3>Roofing</h3>
-<p>Reliable roofing and structural solutions.</p>
+<p>Reliable roofing services ensuring durability and protection for your home.</p>
+<a href="contact.html" class="btn">Get Quote</a>
 </div>
 
 </div>
@@ -202,14 +251,13 @@ color:#555;
 
 <!-- FOOTER -->
 <footer>
-
 <div class="footer-container">
 
 <div class="footer-logo">
 <img src="logo.png">
 </div>
 
-<div class="footer-details">
+<div>
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
 <p>📍 8 Ash Lane, Windsor, SL44PS</p>
@@ -218,8 +266,10 @@ color:#555;
 </div>
 
 </div>
-
 </footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/447424479788" class="wa-float">💬</a>
 
 </body>
 </html>

@@ -13,7 +13,7 @@ font-family: 'Segoe UI', sans-serif;
 color:#111;
 }
 
-/* NAVBAR */
+/* NAVBAR (UNCHANGED) */
 .nav {
 position:fixed;
 top:0;
@@ -21,15 +21,17 @@ width:100%;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:15px 40px;
+padding:15px 40px; /* DO NOT CHANGE */
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
 }
 
-/* LOGO (MATCH HEADER HEIGHT) */
+/* LOGO (BIGGER WITHOUT CHANGING HEADER) */
 .logo img {
-height:70px;
+height:50px;
+transform: scale(1.5); /* BIGGER */
+transform-origin: left center;
 }
 
 /* MENU */

@@ -13,7 +13,7 @@ font-family: 'Segoe UI', sans-serif;
 color:#111;
 }
 
-/* NAVBAR */
+/* NAVBAR (UNCHANGED SIZE) */
 .nav {
 position:fixed;
 top:0;
@@ -27,9 +27,11 @@ border-bottom:1px solid #eee;
 z-index:1000;
 }
 
-/* LOGO (BIGGER NOW) */
+/* LOGO (VISUALLY BIGGER WITHOUT CHANGING HEADER) */
 .logo img {
-height:65px; /* increased from 50px */
+height:50px;
+transform: scale(1.3); /* makes logo bigger */
+transform-origin: left center;
 }
 
 /* MENU */

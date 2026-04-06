@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Services</title>
+<title>Services - Waheguru Builders Ltd</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body{margin:0;font-family:Arial;}
+body{margin:0;font-family:'Segoe UI',sans-serif;color:#111;}
 
 .nav{
-display:flex;justify-content:space-between;
-padding:15px 40px;background:#111;
+position:fixed;top:0;width:100%;
+display:flex;align-items:center;justify-content:space-between;
+padding:15px 40px;background:white;border-bottom:1px solid #eee;
 }
 
-.nav a{color:white;margin:15px;text-decoration:none;}
+.logo img{height:50px;transform:scale(1.78);transform-origin:left center;}
+
+.menu{display:flex;gap:25px;margin-right:70px;}
+.menu a{text-decoration:none;color:#333;font-weight:500;}
 
 .hero{
-height:40vh;
+height:50vh;
 background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
 background-size:cover;
 display:flex;align-items:center;justify-content:center;color:white;
 }
 
-footer{background:#111;color:#ccc;padding:20px;text-align:center;}
+.section{padding:100px 20px;text-align:center;background:#fafafa;}
+
+.cards{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;}
+
+.card{
+width:260px;padding:25px;background:white;
+border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* FOOTER SAME */
+footer{background:white;padding:40px;border-top:1px solid #eee;}
+.footer-container{display:flex;align-items:center;gap:50px;max-width:1200px;margin:auto;}
+.footer-logo img{height:120px;}
+.footer-details p{margin:6px 0;color:#555;}
+
 </style>
 </head>
 
 <body>
 
 <div class="nav">
-<a href="index.html"><img src="logo.png" style="height:60px;"></a>
-<div>
+<div class="logo"><a href="index.html"><img src="logo.png"></a></div>
+<div class="menu">
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
 <a href="gallery.html">Gallery</a>
@@ -40,13 +58,29 @@ footer{background:#111;color:#ccc;padding:20px;text-align:center;}
 
 <div class="hero"><h1>Our Services</h1></div>
 
-<div style="padding:40px;text-align:center;">
-<p>New Builds | Loft Conversions | Extensions | Kitchens | Bathrooms | Roofing | Electrical | Plumbing | Driveways | Painting | Carpentry</p>
+<div class="section">
+<div class="cards">
+<div class="card">New Builds</div>
+<div class="card">Loft Conversions</div>
+<div class="card">Extensions</div>
+<div class="card">Kitchen Renovations</div>
+<div class="card">Bathroom Renovations</div>
+<div class="card">Roofing</div>
+</div>
 </div>
 
-<footer>📍 Windsor | 📞 +44-7424479788</footer>
-
-<a href="https://wa.me/447424479788" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;">💬</a>
+<footer>
+<div class="footer-container">
+<div class="footer-logo"><img src="logo.png"></div>
+<div class="footer-details">
+<p><strong>Waheguru Builders Ltd</strong></p>
+<p>Company No: 14736396</p>
+<p>📍 8 Ash Lane, Windsor, SL44PS</p>
+<p>📞 +44-7424479788</p>
+<p>✉️ wahegurubuilders@gmail.com</p>
+</div>
+</div>
+</footer>
 
 </body>
 </html>

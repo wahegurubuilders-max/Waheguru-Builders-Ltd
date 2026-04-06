@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Contact</title>
+<title>Contact - Waheguru Builders Ltd</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body{margin:0;font-family:'Segoe UI',sans-serif;}
 
-/* EXACT SAME HEADER */
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+color:#111;
+}
+
+/* HEADER */
 .nav{
 position:fixed;
 top:0;
@@ -39,18 +44,98 @@ text-decoration:none;
 font-weight:500;
 }
 
-/* FORM */
-form{
-padding-top:120px;
+/* HERO */
+.hero{
+height:55vh;
+background:
+linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
 text-align:center;
 }
 
+.hero h1{
+font-size:42px;
+}
+
+/* SECTION */
+.section{
+padding:100px 20px;
+background:#f8f8f8;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:40px;
+}
+
+/* CONTACT INFO */
+.contact-box{
+width:350px;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
+.contact-box h3{
+margin-bottom:20px;
+}
+
+.contact-item{
+margin:12px 0;
+color:#555;
+}
+
+/* FORM */
+.form{
+width:400px;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
+}
+
 input,textarea{
-width:80%;
+width:100%;
 padding:12px;
-margin:10px;
+margin:10px 0;
 border:1px solid #ccc;
 border-radius:5px;
+}
+
+/* LUXURY BUTTON */
+.btn{
+margin-top:10px;
+padding:15px 35px;
+background:linear-gradient(135deg,#d4af37,#f5d76e,#b8962e);
+border:none;
+border-radius:50px;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+/* WHATSAPP BOX */
+.whatsapp-box{
+margin-top:20px;
+padding:15px;
+background:#25D366;
+color:white;
+border-radius:10px;
+text-align:center;
+font-weight:600;
+text-decoration:none;
+display:block;
 }
 
 /* FOOTER */
@@ -70,13 +155,21 @@ margin:auto;
 
 .footer-logo img{height:120px;}
 
-.footer-details p{margin:6px 0;color:#555;}
+/* MOBILE */
+@media(max-width:768px){
+.nav{flex-direction:column;align-items:flex-start;padding:10px 20px;}
+.menu{flex-wrap:wrap;gap:10px;margin-top:10px;}
+.section{flex-direction:column;align-items:center;}
+.footer-container{flex-direction:column;}
+.footer-logo img{height:90px;}
+}
 
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
 <div class="logo"><a href="index.html"><img src="logo.png"></a></div>
 
@@ -89,26 +182,59 @@ margin:auto;
 </div>
 </div>
 
-<form>
-<h2>Get a Quote</h2>
+<!-- HERO -->
+<div class="hero">
+<h1>Contact Us</h1>
+</div>
 
-<input placeholder="Name"><br>
-<input placeholder="Phone"><br>
-<input placeholder="Email"><br>
-<textarea placeholder="Job Details"></textarea><br>
+<!-- SECTION -->
+<div class="section">
 
-<button>Submit</button>
-</form>
+<!-- CONTACT INFO -->
+<div class="contact-box">
 
+<h3>Get in Touch</h3>
+
+<div class="contact-item">📍 8 Ash Lane, Windsor</div>
+<div class="contact-item">📞 +44 7424479788</div>
+<div class="contact-item">✉️ wahegurubuilders@gmail.com</div>
+
+<a href="https://wa.me/447424479788" class="whatsapp-box">
+Chat on WhatsApp
+</a>
+
+</div>
+
+<!-- FORM -->
+<div class="form">
+
+<h3>Request a Quote</h3>
+
+<input type="text" placeholder="Your Name">
+<input type="text" placeholder="Phone Number">
+<input type="email" placeholder="Email Address">
+<textarea placeholder="Describe your project"></textarea>
+
+<button class="btn">Send Request</button>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
 <footer>
 <div class="footer-container">
-<div class="footer-logo"><img src="logo.png"></div>
 
-<div class="footer-details">
+<div class="footer-logo">
+<img src="logo.png">
+</div>
+
+<div>
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
-<p>📍 8 Ash Lane, Windsor</p>
+<p>📍 Windsor</p>
 <p>📞 +44-7424479788</p>
+<p>✉️ wahegurubuilders@gmail.com</p>
 </div>
 
 </div>

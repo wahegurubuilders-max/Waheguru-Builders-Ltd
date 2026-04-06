@@ -19,12 +19,12 @@ position:fixed;
 top:0;
 width:100%;
 display:flex;
-justify-content:space-between;
 align-items:center;
-padding:15px 40px; /* balanced size */
+padding:15px 40px;
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
+gap:30px; /* space between logo & menu */
 }
 
 /* LOGO */
@@ -32,12 +32,11 @@ z-index:1000;
 height:50px;
 }
 
-/* MENU */
+/* MENU (ALL LEFT) */
 .menu {
 display:flex;
 align-items:center;
-gap:20px; /* auto spacing */
-flex-wrap:wrap;
+gap:20px;
 }
 
 .menu a {

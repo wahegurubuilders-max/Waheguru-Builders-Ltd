@@ -5,17 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body{margin:0;font-family:'Segoe UI';}
+body{margin:0;font-family:'Segoe UI',sans-serif;color:#111;}
 
-.nav{position:fixed;width:100%;display:flex;justify-content:space-between;padding:15px 40px;background:white;border-bottom:1px solid #eee;}
-.logo img{height:50px;transform:scale(1.78);}
-.menu{display:flex;gap:25px;margin-right:70px;}
+/* SAME HEADER AS INDEX */
+.nav{
+position:fixed;top:0;width:100%;
+display:flex;align-items:center;justify-content:space-between;
+padding:15px 40px;background:white;border-bottom:1px solid #eee;
+z-index:1000;
+}
 
+.logo img{
+height:50px;
+transform:scale(1.78);
+transform-origin:left center;
+}
+
+.menu{
+display:flex;
+gap:25px;
+margin-right:70px;
+}
+
+.menu a{
+color:#333;text-decoration:none;font-weight:500;
+}
+
+/* GALLERY */
 .gallery{
-padding-top:100px;
+padding-top:120px;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:15px;
+padding-left:20px;
+padding-right:20px;
 }
 
 .gallery img{
@@ -28,7 +51,7 @@ transition:0.3s;
 
 .gallery img:hover{transform:scale(1.05);}
 
-/* FOOTER */
+/* SAME FOOTER */
 footer{background:white;padding:40px;border-top:1px solid #eee;}
 .footer-container{display:flex;align-items:center;gap:50px;max-width:1200px;margin:auto;}
 .footer-logo img{height:120px;}

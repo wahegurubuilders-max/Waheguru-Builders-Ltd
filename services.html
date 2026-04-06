@@ -2,48 +2,49 @@
 <html>
 <head>
 <title>Services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body {margin:0;font-family:Arial;}
+body{margin:0;font-family:Arial;}
 
-.hero {
+.nav{
+display:flex;justify-content:space-between;
+padding:15px 40px;background:#111;
+}
+
+.nav a{color:white;margin:15px;text-decoration:none;}
+
+.hero{
 height:40vh;
-background:
-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
+background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
 background-size:cover;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
+display:flex;align-items:center;justify-content:center;color:white;
 }
 
-.section {
-padding:40px;
-text-align:center;
-}
-
-footer {
-background:#111;
-color:#ccc;
-padding:20px;
-text-align:center;
-}
+footer{background:#111;color:#ccc;padding:20px;text-align:center;}
 </style>
-
 </head>
 
 <body>
 
-<div class="hero"><h1>Our Services</h1></div>
-
-<div class="section">
-<p>New Builds | Loft Conversions | Extensions | Kitchen & Bathroom Refurbishment | Roofing | Electrical | Plumbing | Driveways | Painting | Carpentry</p>
+<div class="nav">
+<a href="index.html"><img src="logo.png" style="height:60px;"></a>
+<div>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+</div>
 </div>
 
-<footer>
-📍 Windsor | 📞 +44-7424479788
-</footer>
+<div class="hero"><h1>Our Services</h1></div>
+
+<div style="padding:40px;text-align:center;">
+<p>New Builds | Loft Conversions | Extensions | Kitchens | Bathrooms | Roofing | Electrical | Plumbing | Driveways | Painting | Carpentry</p>
+</div>
+
+<footer>📍 Windsor | 📞 +44-7424479788</footer>
 
 <a href="https://wa.me/447424479788" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;">💬</a>
 

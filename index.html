@@ -21,8 +21,7 @@ top:0;
 width:100%;
 display:flex;
 align-items:center;
-justify-content:space-between;
-padding:18px 50px;
+padding:18px 40px;
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
@@ -31,19 +30,32 @@ z-index:1000;
 .logo img{
 height:50px;
 transform:scale(1.75);
-transform-origin:left center;
+transform-origin:left;
 }
 
+/* MENU */
 .menu{
 display:flex;
-gap:30px;
-margin-right:60px;
+gap:25px;
+margin-left:auto;
 }
 
 .menu a{
-color:#333;
 text-decoration:none;
+color:#333;
 font-weight:500;
+position:relative;
+padding-bottom:5px;
+}
+
+.menu a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:0;
+width:0%;
+height:2px;
+background:#d4af37;
 transition:0.3s;
 }
 
@@ -51,13 +63,16 @@ transition:0.3s;
 color:#d4af37;
 }
 
+.menu a:hover::after{
+width:100%;
+}
+
 /* HERO */
 .hero{
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
 url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c');
 background-size:cover;
-background-position:center;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -66,29 +81,31 @@ color:white;
 padding:20px;
 }
 
+.hero-content{
+max-width:700px;
+}
+
 .hero h1{
-font-size:52px;
+font-size:48px;
 margin-bottom:15px;
 }
 
 .hero p{
 font-size:18px;
-max-width:600px;
-margin:auto;
+margin-bottom:25px;
 }
 
 /* BUTTON */
 .btn{
-margin-top:25px;
+display:inline-block;
 padding:15px 40px;
 background:linear-gradient(135deg,#d4af37,#f5d76e,#b8962e);
 border-radius:50px;
-font-weight:600;
 text-decoration:none;
 color:black;
+font-weight:600;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
 transition:0.3s;
-display:inline-block;
 }
 
 .btn:hover{
@@ -106,29 +123,31 @@ background:#fafafa;
 .cards{
 display:flex;
 flex-wrap:wrap;
+gap:25px;
 justify-content:center;
-gap:30px;
 }
 
 .card{
 width:260px;
-padding:30px;
+padding:25px;
 background:white;
 border-radius:12px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.3s;
+transition:all 0.3s ease;
+cursor:pointer;
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
 
 /* WHY */
 .why{
 display:flex;
 flex-wrap:wrap;
-justify-content:center;
 gap:30px;
+justify-content:center;
 max-width:1000px;
 margin:auto;
 }
@@ -138,49 +157,23 @@ width:220px;
 font-weight:500;
 }
 
-/* PROJECTS */
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-max-width:1200px;
-margin:auto;
-}
-
-.projects img{
-width:100%;
-height:260px;
-object-fit:cover;
-border-radius:12px;
-transition:0.3s;
-}
-
-.projects img:hover{
-transform:scale(1.05);
-}
-
 /* FOOTER */
 footer{
 background:white;
-padding:50px 20px;
+padding:40px;
 border-top:1px solid #eee;
 }
 
 .footer-container{
 display:flex;
-align-items:center;
-gap:60px;
+gap:50px;
 max-width:1200px;
 margin:auto;
+align-items:center;
 }
 
 .footer-logo img{
 height:120px;
-}
-
-.footer-details p{
-margin:6px 0;
-color:#555;
 }
 
 /* WHATSAPP */
@@ -196,25 +189,52 @@ display:flex;
 align-items:center;
 justify-content:center;
 box-shadow:0 10px 30px rgba(0,0,0,0.4);
+z-index:9999;
+transition:0.3s;
+}
+
+.wa-float svg{
+width:30px;
+fill:white;
+}
+
+.wa-float:hover{
+transform:translateY(-5px) scale(1.08);
+}
+
+.wa-float::after{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+border-radius:50%;
+background:rgba(37,211,102,0.5);
+z-index:-1;
 animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
-0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
-70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
-100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+0%{transform:scale(1);opacity:0.6;}
+70%{transform:scale(1.6);opacity:0;}
+100%{opacity:0;}
 }
 
 /* MOBILE */
 @media(max-width:768px){
-.nav{flex-direction:column;align-items:flex-start;padding:12px 20px;}
-.menu{flex-wrap:wrap;gap:12px;margin-top:10px;}
-.hero h1{font-size:30px;}
+.nav{flex-direction:column;align-items:flex-start;padding:10px 20px;}
+.menu{flex-wrap:wrap;margin-top:10px;}
+.hero h1{font-size:28px;}
 .hero p{font-size:14px;}
 .cards{flex-direction:column;align-items:center;}
-.card{width:90%;}
 .footer-container{flex-direction:column;}
 .footer-logo img{height:90px;}
+
+.wa-float{
+width:55px;
+height:55px;
+bottom:15px;
+right:15px;
+}
 }
 
 </style>
@@ -237,44 +257,42 @@ animation:pulse 2s infinite;
 
 <!-- HERO -->
 <div class="hero">
-<div>
+<div class="hero-content">
 <h1>WAHEGURU BUILDERS LIMITED</h1>
 <p>Premium construction delivering quality, trust and excellence</p>
 <a href="contact.html" class="btn">Get a Quote</a>
+<p style="margin-top:15px;font-size:14px;">Free consultation • Fast response • Trusted service</p>
 </div>
 </div>
 
-<!-- SERVICES -->
+<!-- EXPERTISE -->
 <div class="section">
 <h2>Our Expertise</h2>
+
 <div class="cards">
 <div class="card">New Builds</div>
 <div class="card">Loft Conversions</div>
 <div class="card">Extensions</div>
 <div class="card">Kitchen Renovation</div>
+<div class="card">Bathroom Renovation</div>
 <div class="card">Roofing</div>
 </div>
+
 </div>
 
 <!-- WHY -->
 <div class="section">
 <h2>Why Choose Us</h2>
+
 <div class="why">
 <div class="why-box">✔ Experienced Team</div>
 <div class="why-box">✔ High Quality Work</div>
 <div class="why-box">✔ On Time Delivery</div>
 <div class="why-box">✔ Competitive Pricing</div>
-</div>
+<div class="why-box">✔ Fully Insured</div>
+<div class="why-box">✔ Free Quotes</div>
 </div>
 
-<!-- PROJECTS -->
-<div class="section">
-<h2>Recent Projects</h2>
-<div class="projects">
-<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d">
-<img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154">
-<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c">
-</div>
 </div>
 
 <!-- FOOTER -->
@@ -285,7 +303,7 @@ animation:pulse 2s infinite;
 <img src="logo.png">
 </div>
 
-<div class="footer-details">
+<div>
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
 <p>📍 8 Ash Lane, Windsor, SL44PS</p>
@@ -295,6 +313,13 @@ animation:pulse 2s infinite;
 
 </div>
 </footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/447424479788" target="_blank" class="wa-float">
+<svg viewBox="0 0 32 32">
+<path d="M19.11 17.26c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.56.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.03-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3 0 1.36.98 2.67 1.11 2.85.14.18 1.91 2.91 4.64 4.08.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.59-.65 1.81-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32zM16.01 2.4c-7.5 0-13.6 6.1-13.6 13.6 0 2.4.63 4.75 1.82 6.82L2 30l7.4-1.94c2 .98 4.23 1.5 6.6 1.5h.01c7.5 0 13.6-6.1 13.6-13.6 0-7.5-6.1-13.56-13.6-13.56z"/>
+</svg>
+</a>
 
 </body>
 </html>

@@ -6,12 +6,10 @@
 
 <style>
 
-/* GLOBAL */
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
 color:#111;
-line-height:1.6;
 }
 
 /* HEADER */
@@ -22,7 +20,7 @@ width:100%;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:18px 40px;
+padding:15px 40px;
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
@@ -30,96 +28,83 @@ z-index:1000;
 
 .logo img{
 height:50px;
-transform:scale(1.75);
+transform:scale(1.78);
 transform-origin:left center;
 }
 
 .menu{
 display:flex;
 gap:25px;
-margin-right:60px;
+margin-right:70px;
 }
 
 .menu a{
-text-decoration:none;
 color:#333;
+text-decoration:none;
 font-weight:500;
 }
 
-.menu a:hover{
-color:#d4af37;
-}
-
-/* HERO */
+/* HERO IMAGE */
 .hero{
-height:60vh;
+height:90vh;
 background:
-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
+linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+url('https://images.unsplash.com/photo-1600585154526-990dced4db0d');
 background-size:cover;
 background-position:center;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
 color:white;
+padding:20px;
 }
 
 .hero h1{
-font-size:42px;
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+color:#eee;
 }
 
 /* SECTION */
 .section{
-padding:100px 20px;
-background:#fafafa;
+padding:80px 20px;
 text-align:center;
+background:#fafafa;
 }
 
-/* SERVICES GRID */
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-max-width:1200px;
-margin:auto;
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
 }
 
-/* CARD */
-.service-card{
-background:white;
+.card{
+width:280px;
 padding:30px;
+background:white;
 border-radius:12px;
-box-shadow:0 12px 30px rgba(0,0,0,0.08);
-transition:all 0.3s ease;
-cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+transition:0.3s;
 }
 
-.service-card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 15px 35px rgba(0,0,0,0.1);
 }
-/* TITLE */
-.service-card h3{
+
+.card h3{
 margin-bottom:10px;
 }
 
-/* TEXT */
-.service-card p{
+.card p{
 font-size:14px;
 color:#555;
-}
-
-/* BUTTON */
-.btn{
-margin-top:15px;
-padding:12px 25px;
-background:linear-gradient(135deg,#d4af37,#f5d76e,#b8962e);
-border-radius:50px;
-text-decoration:none;
-color:black;
-font-weight:600;
-display:inline-block;
 }
 
 /* FOOTER */
@@ -131,6 +116,7 @@ border-top:1px solid #eee;
 
 .footer-container{
 display:flex;
+align-items:center;
 gap:50px;
 max-width:1200px;
 margin:auto;
@@ -140,75 +126,9 @@ margin:auto;
 height:120px;
 }
 
-/* WHATSAPP */
- .wa-float{
-position:fixed;
-bottom:25px;
-right:25px;
-width:65px;
-height:65px;
-background:linear-gradient(135deg,#25D366,#128C7E);
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
-z-index:1000;
-}
-
-.wa-float svg{
-width:30px;
-fill:white;
-}
-
-.wa-float::after{
-content:'';
-position:absolute;
-width:100%;
-height:100%;
-border-radius:50%;
-background:rgba(37,211,102,0.5);
-z-index:-1;
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);opacity:0.6;}
-70%{transform:scale(1.6);opacity:0;}
-100%{opacity:0;}
-}
-
-
-/* MOBILE */
-@media(max-width:768px){
-
-.nav{
-flex-direction:column;
-align-items:flex-start;
-padding:10px 20px;
-}
-
-.menu{
-flex-wrap:wrap;
-margin-top:10px;
-}
-
-.hero{
-height:50vh;
-}
-
-.hero h1{
-font-size:28px;
-}
-
-.footer-container{
-flex-direction:column;
-}
-
-.footer-logo img{
-height:90px;
-}
-
+.footer-details p{
+margin:6px 0;
+color:#555;
 }
 
 </style>
@@ -218,7 +138,10 @@ height:90px;
 
 <!-- NAV -->
 <div class="nav">
-<div class="logo"><a href="index.html"><img src="logo.png"></a></div>
+
+<div class="logo">
+<a href="index.html"><img src="logo.png"></a>
+</div>
 
 <div class="menu">
 <a href="index.html">Home</a>
@@ -227,52 +150,50 @@ height:90px;
 <a href="reviews.html">Reviews</a>
 <a href="contact.html">Contact</a>
 </div>
+
 </div>
 
 <!-- HERO -->
 <div class="hero">
+<div>
 <h1>Our Services</h1>
+<p>Delivering high-quality construction with precision & trust</p>
+</div>
 </div>
 
 <!-- SERVICES -->
 <div class="section">
 
-<div class="services">
+<div class="cards">
 
-<div class="service-card">
+<div class="card">
 <h3>New Builds</h3>
-<p>Complete construction services from foundation to finish with high-quality standards.</p>
-<a href="contact.html" class="btn">Get Quote</a>
+<p>Complete construction solutions from start to finish.</p>
 </div>
 
-<div class="service-card">
+<div class="card">
 <h3>Loft Conversions</h3>
-<p>Transform unused space into modern living areas with professional design and build.</p>
-<a href="contact.html" class="btn">Get Quote</a>
+<p>Transform unused space into modern living areas.</p>
 </div>
 
-<div class="service-card">
+<div class="card">
 <h3>Extensions</h3>
-<p>Expand your home with seamless extensions that match your existing structure.</p>
-<a href="contact.html" class="btn">Get Quote</a>
+<p>Expand your property with high-quality builds.</p>
 </div>
 
-<div class="service-card">
+<div class="card">
 <h3>Kitchen Renovation</h3>
-<p>Upgrade your kitchen with modern designs and premium finishes.</p>
-<a href="contact.html" class="btn">Get Quote</a>
+<p>Modern kitchens designed for style and function.</p>
 </div>
 
-  <div class="service-card">
+<div class="card">
 <h3>Bathroom Renovation</h3>
-<p>Upgrade your bathroom with modern design and high-quality finishes.</p>
-<a href="contact.html" class="btn">Get Quote</a>
+<p>Premium bathrooms with elegant finishes.</p>
 </div>
-  
-<div class="service-card">
+
+<div class="card">
 <h3>Roofing</h3>
-<p>Reliable roofing services ensuring durability and protection for your home.</p>
-<a href="contact.html" class="btn">Get Quote</a>
+<p>Reliable roofing and structural solutions.</p>
 </div>
 
 </div>
@@ -281,13 +202,14 @@ height:90px;
 
 <!-- FOOTER -->
 <footer>
+
 <div class="footer-container">
 
 <div class="footer-logo">
 <img src="logo.png">
 </div>
 
-<div>
+<div class="footer-details">
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
 <p>📍 8 Ash Lane, Windsor, SL44PS</p>
@@ -296,13 +218,8 @@ height:90px;
 </div>
 
 </div>
+
 </footer>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/447424479788" target="_blank" class="wa-float">
-<svg viewBox="0 0 32 32">
-<path d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.89.76 5.71 2.205 8.192L.22 32l7.59-1.975A15.91 15.91 0 0016 32c8.836 0 16-7.164 16-16.004z"/>
-</svg>
-</a>
- </body>
+</body>
 </html>

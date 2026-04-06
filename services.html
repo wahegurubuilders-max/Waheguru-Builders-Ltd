@@ -19,11 +19,19 @@ top:0;
 width:100%;
 display:flex;
 align-items:center;
-padding:18px 40px; /* MUST be same everywhere */
+padding:18px 60px; /* 👈 your fix */
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
 }
+
+.menu{
+display:flex;
+gap:25px;
+margin-left:auto;
+margin-right:60px;
+}
+  
 .logo img{
 height:50px;
 transform:scale(1.78);
@@ -35,14 +43,13 @@ text-decoration:none;
 color:#333;
 font-weight:500;
 position:relative;
-padding-bottom:5px;
 }
 
 .menu a::after{
 content:'';
 position:absolute;
 left:0;
-bottom:0;
+bottom:-5px;
 width:0%;
 height:2px;
 background:#d4af37;
@@ -56,6 +63,7 @@ color:#d4af37;
 .menu a:hover::after{
 width:100%;
 }
+  
 /* HERO IMAGE */
 .hero{
 height:90vh;
@@ -176,10 +184,35 @@ font-size:14px;
 
 /* BUTTON */
 .btn{
-padding:12px 25px;
-font-size:14px;
+padding:14px 35px;
+border-radius:50px;
+background:linear-gradient(135deg,#d4af37,#f5d76e,#b8962e);
+color:#111;
+text-decoration:none;
+font-weight:600;
+position:relative;
+overflow:hidden;
+transition:0.3s;
 }
 
+.btn:hover{
+transform:translateY(-4px);
+}
+
+.btn::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.7),transparent);
+transition:0.6s;
+}
+
+.btn:hover::before{
+left:100%;
+}
 /* CARDS */
 .card,
 .service-card{
@@ -209,19 +242,42 @@ height:90px;
 }
 
 /* WHATSAPP */
+
 .wa-float{
-width:55px;
-height:55px;
-bottom:15px;
-right:15px;
+position:fixed;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+z-index:9999;
 }
 
+.wa-float svg{
+width:28px;
+fill:white;
 }
-</style>
-</head>
 
-<body>
+.wa-float::after{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+border-radius:50%;
+background:rgba(37,211,102,0.4);
+animation:pulse 2s infinite;
+}
 
+@keyframes pulse{
+0%{transform:scale(1);}
+70%{transform:scale(1.6);opacity:0;}
+100%{opacity:0;}
+}
 <!-- NAV -->
 <div class="nav">
 
@@ -306,6 +362,10 @@ right:15px;
 </div>
 
 </footer>
-
+<a href="https://wa.me/447424479788" target="_blank" class="wa-float">
+<svg viewBox="0 0 24 24">
+<path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.48 0 .15 5.33.15 11.9c0 2.1.55 4.15 1.6 5.95L0 24l6.3-1.65a11.86 11.86 0 005.75 1.46h.01c6.57 0 11.9-5.33 11.9-11.9z"/>
+</svg>
+</a>
 </body>
 </html>

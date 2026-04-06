@@ -13,7 +13,7 @@ font-family: 'Segoe UI', sans-serif;
 color:#111;
 }
 
-/* NAVBAR */
+/* NAVBAR FIXED */
 .nav {
 position:fixed;
 top:0;
@@ -21,24 +21,33 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:10px 60px;
+padding:10px 25px; /* reduced */
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
 }
 
-.nav a {
-color:#333;
-margin:0 15px;
-text-decoration:none;
-font-weight:500;
+/* MENU */
+.menu {
+display:flex;
+flex-wrap:wrap;
+justify-content:flex-end;
 }
 
-.nav a:hover {
+.menu a {
+color:#333;
+margin:0 10px;
+text-decoration:none;
+font-weight:500;
+font-size:14px;
+white-space:nowrap;
+}
+
+.menu a:hover {
 color:#d4af37;
 }
 
-/* HERO FULL IMAGE */
+/* HERO */
 .hero {
 height:100vh;
 background:
@@ -56,19 +65,18 @@ color:white;
 
 /* HERO TEXT */
 .hero h1 {
-font-size:42px;
+font-size:38px;
 margin-bottom:5px;
-letter-spacing:1px;
 }
 
 .slogan {
-font-size:18px;
+font-size:16px;
 margin-bottom:15px;
-color:#f0f0f0;
+color:#eee;
 }
 
 .hero p {
-font-size:15px;
+font-size:14px;
 max-width:600px;
 margin:auto;
 }
@@ -76,18 +84,17 @@ margin:auto;
 /* BUTTON */
 .btn {
 margin-top:25px;
-padding:13px 28px;
+padding:12px 25px;
 background:#d4af37;
 color:black;
 text-decoration:none;
-border-radius:6px;
-font-weight:600;
-display:inline-block;
+border-radius:5px;
+font-weight:bold;
 }
 
 /* SERVICES */
 .section {
-padding:90px 20px;
+padding:80px 20px;
 text-align:center;
 background:#fafafa;
 }
@@ -96,27 +103,22 @@ background:#fafafa;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:30px;
+gap:25px;
 }
 
 .card {
-width:260px;
-padding:30px;
+width:240px;
+padding:25px;
 background:white;
-border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.06);
-transition:0.3s;
-}
-
-.card:hover {
-transform:translateY(-8px);
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,0.06);
 }
 
 /* FOOTER */
 footer {
 background:white;
 color:#333;
-padding:25px;
+padding:20px;
 text-align:center;
 border-top:1px solid #eee;
 }
@@ -124,22 +126,17 @@ border-top:1px solid #eee;
 /* WHATSAPP */
 .wa-float {
 position: fixed;
-bottom: 25px;
-right: 25px;
-width: 55px;
-height: 55px;
+bottom: 20px;
+right: 20px;
+width: 50px;
+height: 50px;
 background: linear-gradient(135deg, #25D366, #128C7E);
 border-radius: 50%;
 display: flex;
 align-items: center;
 justify-content: center;
-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 z-index: 1000;
-transition: 0.3s;
-}
-
-.wa-float:hover {
-transform: scale(1.1);
 }
 
 </style>
@@ -151,10 +148,10 @@ transform: scale(1.1);
 <div class="nav">
 
 <a href="index.html">
-<img src="logo.png" style="height:48px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
+<img src="logo.png" style="height:45px;">
 </a>
 
-<div>
+<div class="menu">
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
 <a href="gallery.html">Gallery</a>
@@ -208,7 +205,7 @@ Premium construction & development company delivering modern, high-quality build
 
 <!-- WHATSAPP -->
 <a href="https://wa.me/447424479788" target="_blank" class="wa-float">
-<svg viewBox="0 0 32 32" width="26" height="26">
+<svg viewBox="0 0 32 32" width="24" height="24">
 <path fill="white" d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.89.76 5.71 2.205 8.192L.22 32l7.59-1.975A15.91 15.91 0 0016 32c8.836 0 16-7.164 16-16.004z"/>
 </svg>
 </a>

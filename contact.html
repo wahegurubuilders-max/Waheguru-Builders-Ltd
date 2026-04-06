@@ -5,13 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-body{text-align:center;font-family:'Segoe UI';margin:0;}
+body{margin:0;font-family:'Segoe UI';}
 
-.nav{position:fixed;width:100%;display:flex;justify-content:space-between;padding:15px 40px;background:white;}
+/* SAME HEADER */
+.nav{
+position:fixed;top:0;width:100%;
+display:flex;align-items:center;justify-content:space-between;
+padding:15px 40px;background:white;border-bottom:1px solid #eee;
+}
+
 .logo img{height:50px;transform:scale(1.78);}
 .menu{display:flex;gap:25px;margin-right:70px;}
 
-form{padding-top:120px;}
+form{padding-top:120px;text-align:center;}
 
 input,textarea{
 width:80%;
@@ -21,18 +27,9 @@ border:1px solid #ccc;
 border-radius:5px;
 }
 
-button{
-padding:12px 25px;
-background:#d4af37;
-border:none;
-font-weight:bold;
-}
-
 /* FOOTER */
 footer{background:white;padding:40px;border-top:1px solid #eee;}
 .footer-container{display:flex;align-items:center;gap:50px;max-width:1200px;margin:auto;}
-.footer-logo img{height:120px;}
-.footer-details p{margin:6px 0;color:#555;}
 
 </style>
 </head>
@@ -50,17 +47,15 @@ footer{background:white;padding:40px;border-top:1px solid #eee;}
 </div>
 </div>
 
-<form action="mailto:wahegurubuilders@gmail.com">
+<form>
 <h2>Get a Quote</h2>
 
-<input type="text" placeholder="Name"><br>
-<input type="text" placeholder="Phone Number"><br>
-<input type="email" placeholder="Email"><br>
-<input type="text" placeholder="Address"><br>
-<textarea placeholder="Job Description"></textarea><br>
+<input placeholder="Name"><br>
+<input placeholder="Phone"><br>
+<input placeholder="Email"><br>
+<textarea placeholder="Job Details"></textarea><br>
 
 <button>Submit</button>
-
 </form>
 
 <footer>
@@ -69,9 +64,7 @@ footer{background:white;padding:40px;border-top:1px solid #eee;}
 <div class="footer-details">
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
-<p>📍 8 Ash Lane, Windsor, SL44PS</p>
-<p>📞 +44-7424479788</p>
-<p>✉️ wahegurubuilders@gmail.com</p>
+<p>📍 Windsor</p>
 </div>
 </div>
 </footer>

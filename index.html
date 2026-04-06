@@ -6,10 +6,12 @@
 
 <style>
 
+/* GENERAL */
 body {
 margin:0;
 font-family: 'Segoe UI', sans-serif;
 color:#111;
+background:#fff;
 }
 
 /* NAVBAR */
@@ -20,9 +22,9 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:12px 50px;
+padding:10px 60px;
 background:white;
-box-shadow:0 2px 15px rgba(0,0,0,0.05);
+border-bottom:1px solid #eee;
 z-index:1000;
 }
 
@@ -31,13 +33,18 @@ color:#333;
 margin:0 15px;
 text-decoration:none;
 font-weight:500;
+transition:0.3s;
+}
+
+.nav a:hover {
+color:#d4af37;
 }
 
 /* HERO */
 .hero {
 height:100vh;
 background:
-linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)),
+linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.15)),
 url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c');
 background-size:cover;
 background-position:center;
@@ -48,16 +55,17 @@ text-align:center;
 padding:20px;
 }
 
+/* HERO BOX */
 .hero-box {
-background:rgba(255,255,255,0.95);
-padding:45px;
-border-radius:10px;
+background:rgba(255,255,255,0.96);
+padding:50px;
+border-radius:12px;
 max-width:650px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
+box-shadow:0 15px 40px rgba(0,0,0,0.1);
 }
 
 .hero h1 {
-font-size:38px;
+font-size:36px;
 margin-bottom:5px;
 letter-spacing:1px;
 }
@@ -65,45 +73,53 @@ letter-spacing:1px;
 /* SLOGAN */
 .slogan {
 font-size:16px;
-color:#666;
+color:#777;
 margin-bottom:15px;
 }
 
+/* TEXT */
 .hero p {
 font-size:15px;
+color:#444;
 }
 
 /* BUTTON */
 .btn {
-margin-top:20px;
-padding:12px 25px;
+margin-top:25px;
+padding:13px 28px;
 background:#d4af37;
 color:black;
 text-decoration:none;
-border-radius:5px;
-font-weight:bold;
+border-radius:6px;
+font-weight:600;
+display:inline-block;
+transition:0.3s;
+}
+
+.btn:hover {
+background:#c19d2f;
 }
 
 /* SERVICES */
 .section {
-padding:80px 20px;
+padding:90px 20px;
 text-align:center;
-background:#f9f9f9;
+background:#fafafa;
 }
 
 .cards {
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:25px;
+gap:30px;
 }
 
 .card {
 width:260px;
-padding:25px;
+padding:30px;
 background:white;
 border-radius:12px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
+box-shadow:0 10px 30px rgba(0,0,0,0.06);
 transition:0.3s;
 }
 
@@ -120,6 +136,27 @@ text-align:center;
 border-top:1px solid #eee;
 }
 
+/* WHATSAPP */
+.wa-float {
+position: fixed;
+bottom: 25px;
+right: 25px;
+width: 55px;
+height: 55px;
+background: linear-gradient(135deg, #25D366, #128C7E);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+z-index: 1000;
+transition: 0.3s;
+}
+
+.wa-float:hover {
+transform: scale(1.1);
+}
+
 </style>
 </head>
 
@@ -129,7 +166,7 @@ border-top:1px solid #eee;
 <div class="nav">
 
 <a href="index.html">
-<img src="logo.png" style="height:50px;">
+<img src="logo.png" style="height:48px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));">
 </a>
 
 <div>
@@ -154,7 +191,7 @@ Building Excellence Across the UK
 </div>
 
 <p>
-Premium construction & development company delivering high-quality building solutions across Windsor and surrounding areas.
+Premium construction & development company delivering modern, high-quality building solutions across Windsor and surrounding areas.
 </p>
 
 <a href="contact.html" class="btn">Get a Quote</a>
@@ -188,27 +225,10 @@ Premium construction & development company delivering high-quality building solu
 <a href="https://wa.me/447424479788" target="_blank" class="wa-float">
 
 <svg viewBox="0 0 32 32" width="26" height="26">
-<path fill="white" d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.89.76 5.71 2.205 8.192L.22 32l7.59-1.975A15.91 15.91 0 0016 32c8.836 0 16-7.164 16-16.004C32 7.56 24.836.396 16 .396z"/>
+<path fill="white" d="M16 .396C7.164.396 0 7.56 0 16.396c0 2.89.76 5.71 2.205 8.192L.22 32l7.59-1.975A15.91 15.91 0 0016 32c8.836 0 16-7.164 16-16.004z"/>
 </svg>
 
 </a>
-
-<style>
-.wa-float {
-position: fixed;
-bottom: 25px;
-right: 25px;
-width: 55px;
-height: 55px;
-background: linear-gradient(135deg, #25D366, #128C7E);
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-z-index: 1000;
-}
-</style>
 
 </body>
 </html>

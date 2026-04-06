@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Contact - Waheguru Builders Ltd</title>
+<title>Waheguru Builders Ltd</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 
+/* GLOBAL */
 body{
 margin:0;
 font-family:'Segoe UI',sans-serif;
 color:#111;
+line-height:1.6;
 }
 
 /* HEADER */
@@ -19,17 +21,25 @@ top:0;
 width:100%;
 display:flex;
 align-items:center;
-padding:18px 40px; /* MUST be same everywhere */
+justify-content:space-between; /* 👈 IMPORTANT */
+padding:18px 40px;
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
 }
 .logo img{
 height:50px;
-transform:scale(1.78);
+transform:scale(1.75);
 transform-origin:left center;
 }
 
+/* MENU */
+.menu{
+display:flex;
+gap:25px;
+margin-left:auto;
+margin-right:60px; /* 👈 THIS brings it slightly left */
+}
 .menu a{
 text-decoration:none;
 color:#333;

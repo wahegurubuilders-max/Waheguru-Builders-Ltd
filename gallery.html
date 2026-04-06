@@ -6,10 +6,7 @@
 
 <style>
 
-body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-}
+body{margin:0;font-family:'Segoe UI',sans-serif;color:#111;}
 
 /* HEADER */
 .nav{
@@ -18,38 +15,36 @@ top:0;
 width:100%;
 display:flex;
 align-items:center;
-justify-content:space-between; /* 👈 IMPORTANT */
-padding:18px 40px;
+padding:18px 60px;
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
 }
+
 .logo img{
 height:50px;
-transform:scale(1.75);
-transform-origin:left center;
+transform:scale(1.7);
+transform-origin:left;
 }
 
-/* MENU */
 .menu{
 display:flex;
 gap:25px;
 margin-left:auto;
-margin-right:60px; /* 👈 THIS brings it slightly left */
+margin-right:60px;
 }
+
 .menu a{
 text-decoration:none;
 color:#333;
-font-weight:500;
 position:relative;
-padding-bottom:5px;
 }
 
 .menu a::after{
 content:'';
 position:absolute;
 left:0;
-bottom:0;
+bottom:-5px;
 width:0%;
 height:2px;
 background:#d4af37;
@@ -63,179 +58,57 @@ color:#d4af37;
 .menu a:hover::after{
 width:100%;
 }
-  
-  /* HERO */
+
+/* HERO */
 .hero{
 height:60vh;
-background:
-linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
 url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
 background-size:cover;
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 color:white;
+margin-top:80px;
 }
 
-.hero h1{
-font-size:40px;
-}
+.hero h1{font-size:42px;}
 
 /* GALLERY */
 .gallery{
-padding:100px 20px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+padding:80px 20px;
+display:flex;
+flex-wrap:wrap;
 gap:20px;
-max-width:1200px;
-margin:auto;
+justify-content:center;
 }
 
 .gallery img{
-width:100%;
-height:260px;
+width:300px;
+height:220px;
 object-fit:cover;
 border-radius:10px;
 cursor:pointer;
-transition:0.3s;
 }
-
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-/* POPUP */
-.popup{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.95);
-justify-content:center;
-align-items:center;
-z-index:2000;
-}
-
-.popup img{
-max-width:90%;
-max-height:90%;
-border-radius:10px;
-touch-action:none; /* IMPORTANT FOR SWIPE */
-}
-
-/* CLOSE */
-.popup span{
-position:absolute;
-top:20px;
-right:30px;
-font-size:30px;
-color:white;
-cursor:pointer;
-}
-
-/* BUTTONS */
-.nav-btn{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-font-size:40px;
-color:white;
-cursor:pointer;
-padding:10px 20px;
-background:rgba(0,0,0,0.4);
-border-radius:5px;
-}
-
-.prev{left:20px;}
-.next{right:20px;}
 
 /* FOOTER */
 footer{
-background:white;
 padding:40px;
+background:white;
 border-top:1px solid #eee;
 }
 
 .footer-container{
 display:flex;
+gap:40px;
 align-items:center;
-gap:50px;
 max-width:1200px;
 margin:auto;
 }
 
-.footer-logo img{height:120px;}
+.footer-logo img{height:110px;}
 
-.footer-details p{margin:6px 0;color:#555;}
-/* MOBILE SAFE FIXES */
-@media(max-width:768px){
-
-/* HEADER */
-.nav{
-flex-direction:column;
-align-items:flex-start;
-padding:12px 20px;
-}
-
-.menu{
-flex-wrap:wrap;
-gap:12px;
-margin-top:10px;
-margin-right:0;
-}
-
-/* HERO */
-.hero{
-height:80vh;
-padding-top:60px;
-}
-
-.hero h1{
-font-size:28px;
-line-height:1.3;
-}
-
-.hero p{
-font-size:14px;
-}
-
-/* BUTTON */
-.btn{
-padding:12px 25px;
-font-size:14px;
-}
-
-/* CARDS */
-.card,
-.service-card{
-width:90% !important;
-margin:auto;
-}
-
-/* GALLERY */
-.gallery{
-padding:80px 10px;
-gap:12px;
-}
-
-.gallery img{
-height:200px;
-}
-
-/* FOOTER */
-.footer-container{
-flex-direction:column;
-align-items:flex-start;
-gap:20px;
-}
-
-.footer-logo img{
-height:90px;
-}
-
-/* WHATSAPP FLOAT */
+/* WHATSAPP (WORKING VERSION) */
 .wa-float{
 position:fixed;
 bottom:25px;
@@ -251,14 +124,14 @@ box-shadow:0 10px 25px rgba(0,0,0,0.3);
 z-index:9999;
 }
 
-/* ICON */
 .wa-float svg{
 width:28px;
 height:28px;
 fill:white;
+position:relative;
+z-index:2;
 }
 
-/* PULSE EFFECT */
 .wa-float::after{
 content:'';
 position:absolute;
@@ -266,17 +139,23 @@ width:100%;
 height:100%;
 border-radius:50%;
 background:rgba(37,211,102,0.4);
-animation:waPulse 2s infinite;
-z-index:-1;
+animation:pulse 2s infinite;
 }
 
-/* ANIMATION */
-@keyframes waPulse{
+@keyframes pulse{
 0%{transform:scale(1);opacity:0.6;}
 70%{transform:scale(1.6);opacity:0;}
 100%{opacity:0;}
 }
-  
+
+/* MOBILE */
+@media(max-width:768px){
+.nav{flex-direction:column;align-items:flex-start;}
+.menu{flex-wrap:wrap;margin-top:10px;}
+.gallery{flex-direction:column;align-items:center;}
+.footer-container{flex-direction:column;}
+}
+
 </style>
 </head>
 
@@ -297,111 +176,37 @@ z-index:-1;
 
 <!-- HERO -->
 <div class="hero">
-<h1>Our Projects</h1>
+<h1>Our Work</h1>
 </div>
 
 <!-- GALLERY -->
 <div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" onclick="openImage(0)">
-<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd" onclick="openImage(1)">
-<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d" onclick="openImage(2)">
-<img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154" onclick="openImage(3)">
-<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" onclick="openImage(4)">
-<img src="https://images.unsplash.com/photo-1599423300746-b62533397364" onclick="openImage(5)">
-
-</div>
-
-<!-- POPUP -->
-<div class="popup" id="popup">
-
-<span onclick="closeImage()">×</span>
-
-<div class="nav-btn prev" onclick="prevImage()">❮</div>
-<div class="nav-btn next" onclick="nextImage()">❯</div>
-
-<img id="popup-img">
-
+<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+<img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd">
+<img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d">
+<img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154">
 </div>
 
 <!-- FOOTER -->
 <footer>
 <div class="footer-container">
 <div class="footer-logo"><img src="logo.png"></div>
-
-<div class="footer-details">
+<div>
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
-<p>📍 8 Ash Lane, Windsor, SL44PS</p>
+<p>📍 Windsor</p>
 <p>📞 +44-7424479788</p>
 <p>✉️ wahegurubuilders@gmail.com</p>
 </div>
 </div>
 </footer>
 
-<!-- SCRIPT -->
-<script>
-
-let images = [
-"https://images.unsplash.com/photo-1503387762-592deb58ef4e",
-"https://images.unsplash.com/photo-1504307651254-35680f356dfd",
-"https://images.unsplash.com/photo-1600585154526-990dced4db0d",
-"https://images.unsplash.com/photo-1600607688969-a5bfcd646154",
-"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
-"https://images.unsplash.com/photo-1599423300746-b62533397364"
-];
-
-let currentIndex = 0;
-let startX = 0;
-
-/* OPEN */
-function openImage(index){
-currentIndex = index;
-document.getElementById("popup").style.display="flex";
-document.getElementById("popup-img").src = images[currentIndex];
-}
-
-/* CLOSE */
-function closeImage(){
-document.getElementById("popup").style.display="none";
-}
-
-/* NEXT / PREV */
-function nextImage(){
-currentIndex = (currentIndex + 1) % images.length;
-document.getElementById("popup-img").src = images[currentIndex];
-}
-
-function prevImage(){
-currentIndex = (currentIndex - 1 + images.length) % images.length;
-document.getElementById("popup-img").src = images[currentIndex];
-}
-
-/* SWIPE SUPPORT */
-const popupImg = document.getElementById("popup-img");
-
-popupImg.addEventListener("touchstart", function(e){
-startX = e.touches[0].clientX;
-});
-
-popupImg.addEventListener("touchend", function(e){
-let endX = e.changedTouches[0].clientX;
-
-if(startX - endX > 50){
-nextImage(); // swipe left
-}
-else if(endX - startX > 50){
-prevImage(); // swipe right
-}
-});
-
-</script>
-  
+<!-- WHATSAPP -->
 <a href="https://wa.me/447424479788" target="_blank" class="wa-float">
 <svg viewBox="0 0 24 24">
 <path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.48 0 .15 5.33.15 11.9c0 2.1.55 4.15 1.6 5.95L0 24l6.3-1.65a11.86 11.86 0 005.75 1.46h.01c6.57 0 11.9-5.33 11.9-11.9z"/>
 </svg>
 </a>
-  
+
 </body>
 </html>

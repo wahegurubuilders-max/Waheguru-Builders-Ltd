@@ -204,21 +204,36 @@ color:#555;
 position:fixed;
 bottom:25px;
 right:25px;
-width:65px;
-height:65px;
-background:linear-gradient(135deg,#25D366,#128C7E);
+width:60px;
+height:60px;
+background:#25D366;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+z-index:9999;
+}
+
+.wa-float svg{
+width:28px;
+fill:white;
+}
+
+.wa-float::after{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+border-radius:50%;
+background:rgba(37,211,102,0.4);
 animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
-0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
-70%{box-shadow:0 0 0 20px rgba(37,211,102,0);}
-100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+0%{transform:scale(1);}
+70%{transform:scale(1.6);opacity:0;}
+100%{opacity:0;}
 }
 
 /* MOBILE */
@@ -385,6 +400,10 @@ right:15px;
 
 </div>
 </footer>
-
+<a href="https://wa.me/447424479788" target="_blank" class="wa-float">
+<svg viewBox="0 0 24 24">
+<path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.48 0 .15 5.33.15 11.9c0 2.1.55 4.15 1.6 5.95L0 24l6.3-1.65a11.86 11.86 0 005.75 1.46h.01c6.57 0 11.9-5.33 11.9-11.9z"/>
+</svg>
+</a>
 </body>
 </html>

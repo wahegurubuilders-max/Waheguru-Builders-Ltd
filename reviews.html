@@ -42,7 +42,6 @@ margin-right:70px;
 color:#333;
 text-decoration:none;
 font-weight:500;
-white-space:nowrap;
 }
 
 .menu a:hover{
@@ -56,40 +55,39 @@ background:
 linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
 url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
 background-size:cover;
-background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
-text-align:center;
 color:white;
+text-align:center;
 }
 
 .hero h1{
-font-size:40px;
+font-size:42px;
 }
 
-/* REVIEWS SECTION */
+/* SECTION */
 .section{
 padding:80px 20px;
 background:#fafafa;
 text-align:center;
 }
 
+/* REVIEW GRID */
 .reviews{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
 max-width:1200px;
 margin:auto;
 }
 
+/* CARD */
 .review-card{
-width:300px;
 background:white;
-padding:25px;
+padding:30px;
 border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.06);
+box-shadow:0 12px 30px rgba(0,0,0,0.08);
 text-align:left;
 transition:0.3s;
 }
@@ -100,19 +98,41 @@ transform:translateY(-8px);
 
 /* STARS */
 .stars{
-color:#f5b50a;
-margin-bottom:10px;
+color:#d4af37;
 font-size:18px;
+margin-bottom:10px;
 }
 
+/* TEXT */
 .review-text{
 font-size:14px;
 color:#555;
 margin-bottom:15px;
+line-height:1.6;
 }
 
+/* NAME */
 .customer{
 font-weight:bold;
+color:#111;
+}
+
+/* BUTTON */
+.review-btn{
+margin-top:40px;
+display:inline-block;
+padding:14px 30px;
+background:linear-gradient(135deg,#d4af37,#b8962e);
+color:black;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.review-btn:hover{
+transform:translateY(-3px);
 }
 
 /* FOOTER */
@@ -130,13 +150,19 @@ max-width:1200px;
 margin:auto;
 }
 
-.footer-logo img{
-height:120px;
-}
+.footer-logo img{height:120px;}
 
 .footer-details p{
 margin:6px 0;
 color:#555;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.nav{flex-direction:column;align-items:flex-start;padding:10px 20px;}
+.menu{flex-wrap:wrap;gap:10px;margin-top:10px;}
+.footer-container{flex-direction:column;align-items:flex-start;}
+.footer-logo img{height:90px;}
 }
 
 </style>
@@ -146,10 +172,7 @@ color:#555;
 
 <!-- NAV -->
 <div class="nav">
-
-<div class="logo">
-<a href="index.html"><img src="logo.png"></a>
-</div>
+<div class="logo"><a href="index.html"><img src="logo.png"></a></div>
 
 <div class="menu">
 <a href="index.html">Home</a>
@@ -158,12 +181,11 @@ color:#555;
 <a href="reviews.html">Reviews</a>
 <a href="contact.html">Contact</a>
 </div>
-
 </div>
 
 <!-- HERO -->
 <div class="hero">
-<h1>Customer Reviews</h1>
+<h1>What Our Clients Say</h1>
 </div>
 
 <!-- REVIEWS -->
@@ -174,42 +196,46 @@ color:#555;
 <div class="review-card">
 <div class="stars">★★★★★</div>
 <div class="review-text">
-Excellent work from start to finish. Very professional team and high-quality finish.
+Outstanding service from start to finish. The team delivered exactly what we wanted and exceeded expectations.
 </div>
-<div class="customer">— John Smith</div>
+<div class="customer">— Mr. Singh</div>
 </div>
 
 <div class="review-card">
 <div class="stars">★★★★★</div>
 <div class="review-text">
-Loft conversion completed on time and exceeded expectations. Highly recommended!
+Very professional builders. Loft conversion completed on time with excellent quality workmanship.
 </div>
-<div class="customer">— Sarah Williams</div>
+<div class="customer">— James Carter</div>
 </div>
 
 <div class="review-card">
 <div class="stars">★★★★☆</div>
 <div class="review-text">
-Very reliable builders, great communication throughout the project.
+Great communication and reliable team. Highly recommend for home extensions.
 </div>
-<div class="customer">— David Patel</div>
+<div class="customer">— Priya Patel</div>
 </div>
 
 <div class="review-card">
 <div class="stars">★★★★★</div>
 <div class="review-text">
-Kitchen renovation looks amazing. Great attention to detail.
+Kitchen renovation looks amazing. Attention to detail was excellent throughout the project.
 </div>
-<div class="customer">— Emma Brown</div>
+<div class="customer">— Sarah Williams</div>
 </div>
 
 </div>
+
+<!-- BUTTON -->
+<a href="mailto:wahegurubuilders@gmail.com" class="review-btn">
+Leave a Review / Give Feedback
+</a>
 
 </div>
 
 <!-- FOOTER -->
 <footer>
-
 <div class="footer-container">
 
 <div class="footer-logo">
@@ -219,13 +245,11 @@ Kitchen renovation looks amazing. Great attention to detail.
 <div class="footer-details">
 <p><strong>Waheguru Builders Ltd</strong></p>
 <p>Company No: 14736396</p>
-<p>📍 8 Ash Lane, Windsor, SL44PS</p>
+<p>📍 Windsor</p>
 <p>📞 +44-7424479788</p>
-<p>✉️ wahegurubuilders@gmail.com</p>
 </div>
 
 </div>
-
 </footer>
 
 </body>

@@ -20,23 +20,27 @@ top:0;
 width:100%;
 display:flex;
 align-items:center;
+justify-content:center; /* center menu */
 padding:15px 40px;
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
-gap:30px; /* space between logo & menu */
 }
 
-/* LOGO */
+/* LOGO (LEFT FIXED) */
+.logo {
+position:absolute;
+left:30px;
+}
+
 .logo img {
 height:50px;
 }
 
-/* MENU (ALL LEFT) */
+/* MENU CENTER */
 .menu {
 display:flex;
-align-items:center;
-gap:20px;
+gap:25px;
 }
 
 .menu a {
@@ -44,7 +48,6 @@ color:#333;
 text-decoration:none;
 font-weight:500;
 font-size:15px;
-white-space:nowrap;
 }
 
 .menu a:hover {

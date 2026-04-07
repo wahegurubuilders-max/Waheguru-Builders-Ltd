@@ -67,14 +67,12 @@ color:#d4af37;
 width:100%;
 }
   
-/* HERO */
+* HERO */
 .hero{
 height:55vh;
-background:
-linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
 url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c');
 background-size:cover;
-background-position:center;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -82,10 +80,7 @@ color:white;
 text-align:center;
 }
 
-.hero h1{
-font-size:42px;
-letter-spacing:1px;
-}
+.hero h1{font-size:42px;}
 
 /* SECTION */
 .section{
@@ -94,13 +89,8 @@ background:#f8f8f8;
 text-align:center;
 }
 
-/* EMPTY */
-.empty{
-color:#777;
-margin-bottom:40px;
-}
+.empty{color:#777;margin-bottom:40px;}
 
-/* REVIEWS */
 .reviews{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -109,49 +99,28 @@ max-width:1200px;
 margin:auto;
 }
 
-/* CARD */
 .review-card{
 background:white;
 padding:30px;
 border-radius:12px;
 box-shadow:0 12px 30px rgba(0,0,0,0.08);
 text-align:left;
-transition:0.3s;
 }
 
-.review-card:hover{
-transform:translateY(-6px);
-}
-
-/* HEADER ROW */
 .review-header{
 display:flex;
 justify-content:space-between;
-align-items:center;
-margin-bottom:12px;
+margin-bottom:10px;
 }
 
-.customer{
-font-weight:bold;
-font-size:16px;
-}
+.customer{font-weight:bold;}
+.stars{color:#d4af37;}
 
-.stars{
-color:#d4af37;
-font-size:16px;
-}
+.review-text{color:#555;font-size:14px;}
 
-/* TEXT */
-.review-text{
-font-size:14px;
-color:#555;
-line-height:1.6;
-}
-
-/* FORM */
 .form{
 max-width:500px;
-margin:70px auto 0 auto;
+margin:60px auto;
 background:white;
 padding:30px;
 border-radius:12px;
@@ -166,7 +135,6 @@ border:1px solid #ccc;
 border-radius:5px;
 }
 
-/* STAR SELECT */
 .star-select span{
 font-size:26px;
 cursor:pointer;
@@ -177,24 +145,18 @@ color:#ccc;
 color:#d4af37;
 }
 
-/* ⭐ LUXURY BUTTON */
+/* BUTTON */
 .btn{
-margin-top:15px;
-padding:15px 40px;
+padding:14px 35px;
 background:linear-gradient(135deg,#d4af37,#f5d76e,#b8962e);
-color:#111;
-border:none;
 border-radius:50px;
-font-weight:600;
-letter-spacing:0.5px;
+border:none;
 cursor:pointer;
+font-weight:600;
 position:relative;
 overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
-transition:all 0.3s ease;
 }
 
-/* SHINE EFFECT */
 .btn::before{
 content:'';
 position:absolute;
@@ -210,257 +172,23 @@ transition:0.6s;
 left:100%;
 }
 
-/* HOVER */
-.btn:hover{
-transform:translateY(-3px) scale(1.03);
-box-shadow:0 15px 40px rgba(0,0,0,0.4);
-}
-
-.btn:active{
-transform:scale(0.97);
-}
-
 /* FOOTER */
 footer{
-background:white;
 padding:40px;
+background:white;
 border-top:1px solid #eee;
 }
 
 .footer-container{
 display:flex;
+gap:40px;
 align-items:center;
-gap:50px;
 max-width:1200px;
 margin:auto;
 }
 
-.footer-logo img{height:120px;}
-
-.footer-details p{
-margin:6px 0;
-color:#555;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-.nav{flex-direction:column;align-items:flex-start;padding:10px 20px;}
-.menu{flex-wrap:wrap;gap:10px;margin-top:10px;}
-.footer-container{flex-direction:column;}
-.footer-logo img{height:90px;}
-}
-/* MOBILE SAFE FIXES */
-@media(max-width:768px){
-  
-/* HEADER */
-.nav{
-flex-direction:column;
-align-items:flex-start;
-padding:12px 20px;
-}
-
-.menu{
-flex-wrap:wrap;
-gap:12px;
-margin-top:10px;
-margin-right:0;
-}
-
-/* HERO */
-.hero{
-height:80vh;
-padding-top:60px;
-}
-
-.hero h1{
-font-size:28px;
-line-height:1.3;
-}
-
-.hero p{
-font-size:14px;
-}
-
-/* BUTTON */
-.btn{
-padding:12px 25px;
-font-size:14px;
-}
-
-/* CARDS */
-.card,
-.service-card{
-width:90% !important;
-margin:auto;
-}
-
-/* GALLERY */
-.gallery{
-padding:80px 10px;
-gap:12px;
-}
-
-.gallery img{
-height:200px;
-}
-
-/* FOOTER */
-.footer-container{
-flex-direction:column;
-align-items:flex-start;
-gap:20px;
-}
-
-.footer-logo img{
-height:90px;
-}
-
-  
-}
-
 /* WHATSAPP */
-/* FORCE PULSE */
-@keyframes waPulse {
-0% { transform: scale(1); opacity: 0.6; }
-70% { transform: scale(1.5); opacity: 0; }
-100% { opacity: 0; }
-}
-
-.wa-pulse{
-position:absolute;
-width:60px;
-height:60px;
-border-radius:50%;
-background:rgba(37,211,102,0.4);
-animation: waPulse 2s infinite;
-top:0;
-left:0;
-z-index:1;
-}
-</style>
-</head>
-
-<body>
-
-<!-- NAV -->
-<div class="nav">
-<div class="logo"><a href="index.html"><img src="logo.png"></a></div>
-
-<div class="menu">
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="gallery.html">Gallery</a>
-<a href="reviews.html">Reviews</a>
-<a href="contact.html">Contact</a>
-</div>
-</div>
-
-<!-- HERO -->
-<div class="hero">
-<h1>Customer Reviews</h1>
-</div>
-
-<!-- SECTION -->
-<div class="section">
-
-<p class="empty">No reviews yet. Be the first to share your experience.</p>
-
-<div class="reviews" id="reviewsList"></div>
-
-<!-- FORM -->
-<div class="form">
-
-<h3>Leave Your Feedback</h3>
-
-<input type="text" id="name" placeholder="Your Name">
-
-<textarea id="message" placeholder="Describe your experience"></textarea>
-
-<div class="star-select" id="stars">
-<span onclick="setRating(1)">★</span>
-<span onclick="setRating(2)">★</span>
-<span onclick="setRating(3)">★</span>
-<span onclick="setRating(4)">★</span>
-<span onclick="setRating(5)">★</span>
-</div>
-
-<button class="btn" onclick="addReview()">Submit Review</button>
-
-</div>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-<div class="footer-container">
-
-<div class="footer-logo">
-<img src="logo.png">
-</div>
-
-<div class="footer-details">
-<p><strong>Waheguru Builders Ltd</strong></p>
-<p>Company No: 14736396</p>
-<p>📍 8 Ash Lane, Windsor</p>
-<p>📞 +44-7424479788</p>
-<p>✉️ wahegurubuilders@gmail.com</p>
-</div>
-
-</div>
-</footer>
-
-<!-- SCRIPT -->
-<script>
-
-let rating = 0;
-
-function setRating(r){
-rating = r;
-let stars = document.querySelectorAll("#stars span");
-
-stars.forEach((s,i)=>{
-s.classList.toggle("active", i < r);
-});
-}
-
-function addReview(){
-
-let name = document.getElementById("name").value;
-let message = document.getElementById("message").value;
-
-if(!name || !message || rating==0){
-alert("Please complete all fields");
-return;
-}
-
-let stars = "★★★★★".slice(0,rating);
-
-let reviewHTML = `
-<div class="review-card">
-<div class="review-header">
-<span class="customer">${name}</span>
-<span class="stars">${stars}</span>
-</div>
-<div class="review-text">${message}</div>
-</div>
-`;
-
-document.getElementById("reviewsList").innerHTML += reviewHTML;
-
-document.querySelector(".empty").style.display="none";
-
-/* RESET */
-document.getElementById("name").value="";
-document.getElementById("message").value="";
-setRating(0);
-
-}
-
-</script>
-  
-<a href="https://wa.me/447424479788" target="_blank"
-style="
+.wa-btn{
 position:fixed;
 bottom:25px;
 right:25px;
@@ -471,19 +199,142 @@ border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
 z-index:9999;
-">
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
 
-<!-- PULSE LAYER -->
-<div class="wa-pulse"></div>
+.wa-btn svg{
+width:28px;
+fill:white;
+position:relative;
+z-index:2;
+}
 
-<!-- ICON -->
-<svg viewBox="0 0 24 24"
-style="width:28px;height:28px;fill:white;position:relative;z-index:2;">
+/* PULSE */
+.wa-btn::after{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+border-radius:50%;
+background:rgba(37,211,102,0.4);
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);opacity:0.6;}
+70%{transform:scale(1.6);opacity:0;}
+100%{opacity:0;}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.nav{flex-direction:column;align-items:flex-start;}
+.menu{flex-wrap:wrap;margin-top:10px;}
+.footer-container{flex-direction:column;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+<div class="logo"><a href="index.html"><img src="logo.png"></a></div>
+<div class="menu">
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="gallery.html">Gallery</a>
+<a href="reviews.html">Reviews</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+
+<div class="hero">
+<h1>Customer Reviews</h1>
+</div>
+
+<div class="section">
+
+<p class="empty">No reviews yet. Be the first to share your experience.</p>
+
+<div class="reviews" id="reviewsList"></div>
+
+<div class="form">
+<h3>Leave Your Feedback</h3>
+
+<input id="name" placeholder="Your Name">
+<textarea id="message" placeholder="Your feedback"></textarea>
+
+<div class="star-select" id="stars">
+<span onclick="setRating(1)">★</span>
+<span onclick="setRating(2)">★</span>
+<span onclick="setRating(3)">★</span>
+<span onclick="setRating(4)">★</span>
+<span onclick="setRating(5)">★</span>
+</div>
+
+<button class="btn" onclick="addReview()">Submit Review</button>
+</div>
+
+</div>
+
+<footer>
+<div class="footer-container">
+<div><img src="logo.png" style="height:110px;"></div>
+<div>
+<p><strong>Waheguru Builders Ltd</strong></p>
+<p>📍 Windsor</p>
+<p>📞 +44-7424479788</p>
+<p>✉️ wahegurubuilders@gmail.com</p>
+</div>
+</div>
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/447424479788" class="wa-btn">
+<svg viewBox="0 0 24 24">
 <path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.48 0 .15 5.33.15 11.9c0 2.1.55 4.15 1.6 5.95L0 24l6.3-1.65a11.86 11.86 0 005.75 1.46h.01c6.57 0 11.9-5.33 11.9-11.9z"/>
 </svg>
+</a>
 
-</a>  
+<script>
+let rating=0;
+
+function setRating(r){
+rating=r;
+document.querySelectorAll("#stars span").forEach((s,i)=>{
+s.classList.toggle("active", i<r);
+});
+}
+
+function addReview(){
+let name=document.getElementById("name").value;
+let message=document.getElementById("message").value;
+
+if(!name || !message || rating==0){
+alert("Fill all fields");
+return;
+}
+
+let stars="★★★★★".slice(0,rating);
+
+document.getElementById("reviewsList").innerHTML+=`
+<div class="review-card">
+<div class="review-header">
+<span class="customer">${name}</span>
+<span class="stars">${stars}</span>
+</div>
+<div class="review-text">${message}</div>
+</div>`;
+
+document.querySelector(".empty").style.display="none";
+
+document.getElementById("name").value="";
+document.getElementById("message").value="";
+setRating(0);
+}
+</script>
+
 </body>
 </html>

@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Waheguru Builders Ltd</title>
+<title>Services - Waheguru Builders Ltd</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 
-/* GLOBAL */
-body{
-margin:0;
-font-family:'Segoe UI',sans-serif;
-color:#111;
-line-height:1.6;
-}
+body{margin:0;font-family:'Segoe UI',sans-serif;color:#111;}
 
 /* HEADER */
 .nav{
@@ -32,26 +27,25 @@ transform:scale(1.75);
 transform-origin:left center;
 }
 
-/* MENU */
 .menu{
 display:flex;
 gap:25px;
 margin-left:auto;
-margin-right:60px; /* 👈 THIS brings it slightly left */
+margin-right:60px;
 }
+
 .menu a{
 text-decoration:none;
 color:#333;
 font-weight:500;
 position:relative;
-padding-bottom:5px;
 }
 
 .menu a::after{
 content:'';
 position:absolute;
 left:0;
-bottom:0;
+bottom:-5px;
 width:0%;
 height:2px;
 background:#d4af37;
@@ -66,7 +60,7 @@ color:#d4af37;
 width:100%;
 }
 
-.menu a.active{
+  .menu a.active{
 color:#d4af37;
 }
 

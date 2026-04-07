@@ -97,7 +97,55 @@ height:220px;
 object-fit:cover;
 border-radius:10px;
 cursor:pointer;
+transition:0.3s;
 }
+
+/* HOVER EFFECT */
+.gallery img:hover{
+transform:scale(1.05);
+box-shadow:0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* POPUP */
+.popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+
+.popup img{
+max-width:90%;
+max-height:90%;
+}
+
+.popup .close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:30px;
+color:white;
+cursor:pointer;
+}
+
+.nav-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+font-size:40px;
+color:white;
+cursor:pointer;
+padding:10px;
+}
+
+.prev{left:20px;}
+.next{right:20px;}
 
 /* FOOTER */
 footer{
@@ -116,7 +164,7 @@ margin:auto;
 
 .footer-logo img{height:110px;}
 
-/* WHATSAPP (WORKING VERSION) */
+/* WHATSAPP */
 .wa-float{
 position:fixed;
 bottom:25px;
@@ -136,8 +184,6 @@ z-index:9999;
 width:28px;
 height:28px;
 fill:white;
-position:relative;
-z-index:2;
 }
 
 .wa-float::after{
@@ -151,7 +197,7 @@ animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
-0%{transform:scale(1);opacity:0.6;}
+0%{transform:scale(1);}
 70%{transform:scale(1.6);opacity:0;}
 100%{opacity:0;}
 }
@@ -195,6 +241,14 @@ animation:pulse 2s infinite;
 <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154">
 </div>
 
+<!-- POPUP -->
+<div class="popup" id="popup">
+<span class="close" onclick="closeImage()">×</span>
+<div class="nav-btn prev" onclick="prevImage()">❮</div>
+<img id="popup-img">
+<div class="nav-btn next" onclick="nextImage()">❯</div>
+</div>
+
 <!-- FOOTER -->
 <footer>
 <div class="footer-container">
@@ -209,102 +263,65 @@ animation:pulse 2s infinite;
 </div>
 </footer>
 
-  <script>
-
-let images = [];
-let current = 0;
-
-// collect all gallery images
-document.querySelectorAll('.gallery img').forEach((img, index)=>{
-images.push(img.src);
-img.onclick = () => openImage(index);
-});
-
-function openImage(i){
-current = i;
-document.getElementById("popup").style.display = "flex";
-document.getElementById("popup-img").src = images[i];
-}
-
-function closeImage(){
-document.getElementById("popup").style.display = "none";
-}
-
-function nextImage(){
-current = (current + 1) % images.length;
-document.getElementById("popup-img").src = images[current];
-}
-
-function prevImage(){
-current = (current - 1 + images.length) % images.length;
-document.getElementById("popup-img").src = images[current];
-}
-
-/* SWIPE SUPPORT */
-let startX = 0;
-
-document.getElementById("popup").addEventListener("touchstart", e=>{
-startX = e.touches[0].clientX;
-});
-
-document.getElementById("popup").addEventListener("touchend", e=>{
-let endX = e.changedTouches[0].clientX;
-
-if(startX - endX > 50){
-nextImage();
-}else if(endX - startX > 50){
-prevImage();
-}
-});
-
-</script>
-
 <!-- WHATSAPP -->
 <a href="https://wa.me/447424479788" target="_blank" class="wa-float">
 <svg viewBox="0 0 24 24">
 <path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.48 0 .15 5.33.15 11.9c0 2.1.55 4.15 1.6 5.95L0 24l6.3-1.65a11.86 11.86 0 005.75 1.46h.01c6.57 0 11.9-5.33 11.9-11.9z"/>
 </svg>
 </a>
-<div id="popup" style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.95);
-justify-content:center;
-align-items:center;
-z-index:2000;
-">
 
-<span onclick="closeImage()" style="
-position:absolute;
-top:20px;
-right:30px;
-font-size:30px;
-color:white;
-cursor:pointer;
-">×</span>
+<script>
 
-<div onclick="prevImage()" style="
-position:absolute;
-left:20px;
-font-size:40px;
-color:white;
-cursor:pointer;
-">❮</div>
+let images=[];
+let current=0;
 
-<img id="popup-img" style="max-width:90%;max-height:90%;">
+document.querySelectorAll('.gallery img').forEach((img,i)=>{
+images.push(img.src);
+img.onclick=()=>openImage(i);
+});
 
-<div onclick="nextImage()" style="
-position:absolute;
-right:20px;
-font-size:40px;
-color:white;
-cursor:pointer;
-">❯</div>
+function openImage(i){
+current=i;
+document.getElementById("popup").style.display="flex";
+document.getElementById("popup-img").src=images[i];
+}
 
-</div>
+function closeImage(){
+document.getElementById("popup").style.display="none";
+}
+
+function nextImage(){
+current=(current+1)%images.length;
+document.getElementById("popup-img").src=images[current];
+}
+
+function prevImage(){
+current=(current-1+images.length)%images.length;
+document.getElementById("popup-img").src=images[current];
+}
+
+/* KEYBOARD SUPPORT */
+document.addEventListener("keydown",(e)=>{
+if(e.key==="ArrowRight") nextImage();
+if(e.key==="ArrowLeft") prevImage();
+if(e.key==="Escape") closeImage();
+});
+
+/* SWIPE */
+let startX=0;
+
+document.getElementById("popup").addEventListener("touchstart",e=>{
+startX=e.touches[0].clientX;
+});
+
+document.getElementById("popup").addEventListener("touchend",e=>{
+let endX=e.changedTouches[0].clientX;
+
+if(startX-endX>50) nextImage();
+if(endX-startX>50) prevImage();
+});
+
+</script>
+
 </body>
 </html>

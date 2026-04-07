@@ -8,7 +8,6 @@
 
 body{margin:0;font-family:'Segoe UI',sans-serif;color:#111;}
 
-
 /* HEADER */
 .nav{
 position:fixed;
@@ -16,20 +15,25 @@ top:0;
 width:100%;
 display:flex;
 align-items:center;
-padding:18px 60px; /* 👈 must match other pages */
+justify-content:space-between; /* 👈 IMPORTANT */
+padding:18px 40px;
 background:white;
 border-bottom:1px solid #eee;
 z-index:1000;
 }
+.logo img{
+height:50px;
+transform:scale(1.75);
+transform-origin:left center;
+}
 
-/* MENU */
 .menu{
 display:flex;
 gap:25px;
 margin-left:auto;
-margin-right:40px; /* 👈 same as other pages */
-flex-wrap:wrap;
+margin-right:60px;
 }
+
 .menu a{
 text-decoration:none;
 color:#333;

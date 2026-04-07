@@ -66,6 +66,13 @@ color:#d4af37;
 .menu a:hover::after{
 width:100%;
 }
+.menu a.active{
+color:#d4af37;
+}
+
+.menu a.active::after{
+width:100%;
+}
 /* HERO */
 .hero{
 height:55vh;
@@ -249,6 +256,10 @@ font-size:14px;
 padding:12px 25px;
 font-size:14px;
 }
+.btn:hover{
+transform:translateY(-4px) scale(1.05);
+box-shadow:0 20px 50px rgba(0,0,0,0.4);
+}
 
 /* CARDS */
 .card,
@@ -356,6 +367,6 @@ We usually respond within 24 hours.
 
 </div>
 </footer>
-
+<a href="contact.html" class="active">Contact</a>
 </body>
 </html>
